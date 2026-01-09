@@ -1,26 +1,275 @@
 @import "tailwindcss";
 
+/* =========================
+   TOKENS
+   ========================= */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f3f4f6;
+  --bg-alt: #0f172a; /* hero + contact */
+  --surface: #ffffff;
+  --surfaceTint: rgba(255, 255, 255, 0.9);
+
+  --text: #000000;
+  --text-on-dark: #f8fafc;
+
+  --muted: rgba(0, 0, 0, 0.72);
+  --muted-on-dark: rgba(248, 250, 252, 0.78);
+
+  --stroke: rgba(2, 6, 23, 0.12);
+  --stroke-dark: rgba(248, 250, 252, 0.18);
+
+  --flash: #ff6a00;
+  --flash2: #ffb000;
+
+  --shadowSoft: 0 8px 22px rgba(2, 6, 23, 0.08);
+  --shadowFlash: 0 16px 36px rgba(255, 106, 0, 0.25);
+
+  --r-xl: 16px;
+  --r-2xl: 20px;
+  --r-3xl: 26px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =========================
+   BASE
+   ========================= */
+html,
+body {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(255, 106, 0, 0.28);
+}
+
+/* =========================
+   TYPO
+   ========================= */
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--text);
+  }
+
+  p {
+    color: var(--muted);
+  }
+}
+
+/* =========================
+   COMPONENTS
+   ========================= */
+@layer components {
+  /* Layout */
+  .page {
+    @apply min-h-screen;
+  }
+
+  .section {
+    @apply py-12 md:py-16;
+  }
+
+  /* Dark wrapper */
+  .on-dark {
+    background: var(--bg-alt);
+    color: var(--text-on-dark);
+  }
+
+  .on-dark p,
+  .on-dark .text-muted {
+    color: var(--muted-on-dark);
+  }
+
+  /* Header */
+  .header {
+    @apply sticky top-0 z-50 backdrop-blur;
+    background: rgba(15, 23, 42, 0.94);
+    border-bottom: 1px solid var(--stroke-dark);
+    color: var(--text-on-dark);
+  }
+
+  .brand-subtitle {
+    color: var(--muted-on-dark);
+    font-size: 0.75rem;
+  }
+
+  /* Hero */
+  .hero-wrap {
+    position: relative;
+    background: linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.96),
+      rgba(15, 23, 42, 0.9)
+    );
+    color: var(--text-on-dark);
+  }
+
+  .hero-wrap p {
+    color: var(--muted-on-dark);
+  }
+
+  .hero-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+        520px 260px at 22% 38%,
+        rgba(255, 106, 0, 0.14),
+        transparent 68%
+      ),
+      radial-gradient(
+        520px 260px at 75% 30%,
+        rgba(255, 176, 0, 0.1),
+        transparent 70%
+      );
+  }
+
+  /* Surfaces */
+  .glass {
+    background: var(--surfaceTint);
+    border: 1px solid var(--stroke);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadowSoft);
+  }
+
+  .on-dark .glass {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid var(--stroke-dark);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--stroke);
+    border-radius: var(--r-2xl);
+    box-shadow: var(--shadowSoft);
+  }
+
+  /* Text helpers */
+  .text-muted {
+    color: var(--muted);
+  }
+
+  .text-soft {
+    color: rgba(0, 0, 0);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--flash), var(--flash2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold;
+    background: rgba(255, 106, 0, 0.14);
+    border: 1px solid rgba(255, 106, 0, 0.3);
+    color: var(--text);
+  }
+
+  .on-dark .badge {
+    color: var(--text-on-dark);
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-3 font-semibold transition;
+    border-radius: var(--r-xl);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--flash), var(--flash2));
+    color: #111827;
+    box-shadow: var(--shadowFlash);
+  }
+
+  .btn-primary:hover {
+    filter: brightness(1.05);
+  }
+
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.92);
+    color: #0b1220 !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  }
+
+  .btn-ghost:hover {
+    border-color: rgba(255, 106, 0, 0.45);
+  }
+
+  /* =========================
+     FORMS (aligné avec tes classes JSX)
+     ========================= */
+  .input,
+  .select,
+  .textarea {
+    width: 100%;
+    border-radius: var(--r-2xl);
+    padding: 12px 16px;
+    font-size: 0.875rem;
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid var(--stroke);
+    color: var(--text);
+  }
+
+  .textarea {
+    resize: vertical;
+  }
+
+  .input::placeholder,
+  .textarea::placeholder {
+    color: rgba(11, 18, 32, 0.45);
+  }
+
+  .input:focus,
+  .select:focus,
+  .textarea:focus {
+    border-color: rgba(255, 106, 0, 0.5);
+    box-shadow: 0 0 0 4px rgba(255, 106, 0, 0.15);
+  }
+
+  /* Base dark */
+  .on-dark .input,
+  .on-dark .select,
+  .on-dark .textarea {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(248, 250, 252, 0.22);
+    color: var(--text-on-dark);
+  }
+
+  .on-dark .input::placeholder,
+  .on-dark .textarea::placeholder {
+    color: rgba(248, 250, 252, 0.62);
+  }
+
+  /* === Ta demande : bordures blanches plus visibles === */
+  .on-dark .input-bordered {
+    border-color: rgba(255, 255, 255, 0.75) !important;
+  }
+
+  .on-dark .input-bordered:focus {
+    border-color: rgba(255, 138, 0, 0.9) !important;
+    box-shadow: 0 0 0 4px rgba(255, 106, 0, 0.2);
+  }
+
+  /* Pour éviter un select “blanc sur blanc” dans la liste */
+  .on-dark option {
+    color: #0b1220;
+  }
 }
