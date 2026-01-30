@@ -1,4 +1,3 @@
-// app/components/SiteFooter.jsx
 import Container from "./Container";
 import Link from "next/link";
 import { BRAND } from "./SiteHeader";

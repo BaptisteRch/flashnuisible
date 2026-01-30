@@ -37,6 +37,11 @@ export default function ProfessionnelsPage() {
                 </div>
 
                 <div className="card p-6">
+                  <div className="font-extrabold">Exemple</div>
+                  <p className="mt-2">ziuertbi azoertin oziet ozetp ze</p>
+                </div>
+
+                <div className="card p-6">
                   <div className="font-extrabold">Approche</div>
                   <ul className="mt-3 list-disc pl-5 text-muted space-y-2">
                     <li>Diagnostic & plan d’action</li>

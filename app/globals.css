@@ -80,7 +80,6 @@ a {
     @apply py-12 md:py-16;
   }
 
-  /* Dark wrapper */
   .on-dark {
     background: var(--bg-alt);
     color: var(--text-on-dark);
@@ -107,11 +106,7 @@ a {
   /* Hero */
   .hero-wrap {
     position: relative;
-    background: linear-gradient(
-      180deg,
-      rgba(15, 23, 42, 0.96),
-      rgba(15, 23, 42, 0.9)
-    );
+    background: #1b1919;
     color: var(--text-on-dark);
   }
 
@@ -123,7 +118,8 @@ a {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(
+    background:
+      radial-gradient(
         520px 260px at 22% 38%,
         rgba(255, 106, 0, 0.14),
         transparent 68%
@@ -212,7 +208,7 @@ a {
   }
 
   /* =========================
-     FORMS (aligné avec tes classes JSX)
+     FORMS 
      ========================= */
   .input,
   .select,
@@ -258,7 +254,7 @@ a {
     color: rgba(248, 250, 252, 0.62);
   }
 
-  /* === Ta demande : bordures blanches plus visibles === */
+  /* bordures blanches */
   .on-dark .input-bordered {
     border-color: rgba(255, 255, 255, 0.75) !important;
   }
@@ -268,7 +264,6 @@ a {
     box-shadow: 0 0 0 4px rgba(255, 106, 0, 0.2);
   }
 
-  /* Pour éviter un select “blanc sur blanc” dans la liste */
   .on-dark option {
     color: #0b1220;
   }

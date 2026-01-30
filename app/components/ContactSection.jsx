@@ -1,4 +1,3 @@
-// app/components/ContactSection.jsx
 "use client";
 
 import Image from "next/image";
@@ -35,7 +34,7 @@ export default function ContactSection() {
 
   const mailtoHref = useMemo(() => {
     const subject = encodeURIComponent(
-      "Demande d'intervention — Flash Nuisible"
+      "Demande d'intervention — Flash Nuisible",
     );
     const body = encodeURIComponent(
       `Nom : ${form.name || "-"}
@@ -46,7 +45,7 @@ Type de nuisible : ${form.type || "-"}
 Message :
 ${form.message || "-"}
 
-Envoyé depuis le site Flash Nuisible`
+Envoyé depuis le site Flash Nuisible`,
     );
 
     return `mailto:${BRAND.email}?subject=${subject}&body=${body}`;
@@ -64,20 +63,8 @@ Envoyé depuis le site Flash Nuisible`
 
   return (
     <div className="grid gap-8">
-      {/* ===== Bloc 1 : Card Flash Nuisible ===== */}
-      <div className="glass rounded-3xl overflow-hidden">
-        <Image
-          src="/images/flash/card.jpg"
-          alt="Carte Flash Nuisible"
-          width={1600}
-          height={800}
-          className="w-full h-auto object-cover"
-          priority
-        />
-      </div>
-
-      {/* ===== Bloc 2 : Contact ===== */}
-      <div className="glass rounded-3xl p-6 md:p-8">
+      {/* Bloc 2 : Contact */}
+      <div className="glass rounded-3xl p-6 md:p-8 bg-[#1b1919]">
         <div className="grid gap-8 lg:grid-cols-2 items-start">
           {/* Texte à gauche */}
           <div>

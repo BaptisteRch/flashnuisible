@@ -15,7 +15,7 @@ const BRAND = {
 
 export default function SiteHeader() {
   return (
-    <header className="header">
+    <header className="header bg-[#1b1919]">
       <Container className="flex items-center justify-between py-4">
         <Link
           href="/"
@@ -34,7 +34,7 @@ export default function SiteHeader() {
           <div className="leading-tight">
             <div className="font-extrabold tracking-tight">Flash Nuisible</div>
             <div className="brand-subtitle">
-              Dératisation • Désinsectisation
+              Dératisation • Désinsectisation • Désinfection
             </div>
           </div>
         </Link>
