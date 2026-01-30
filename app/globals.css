@@ -5,7 +5,7 @@
    ========================= */
 :root {
   --bg: #f3f4f6;
-  --bg-alt: #0f172a; /* hero + contact */
+  --bg-alt: #1d1b1b; /* hero + contact */
   --surface: #ffffff;
   --surfaceTint: rgba(255, 255, 255, 0.9);
 
@@ -80,6 +80,7 @@ a {
     @apply py-12 md:py-16;
   }
 
+  /* Dark wrapper */
   .on-dark {
     background: var(--bg-alt);
     color: var(--text-on-dark);
