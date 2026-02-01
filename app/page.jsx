@@ -11,6 +11,7 @@ import FieldGallery from "./components/FieldGallery";
 const BRAND = {
   phoneDisplay: "07 70 35 33 41",
   phoneHref: "tel:+33770353341",
+  reviewUrl: "https://g.page/r/CSENTpfsjv-MEBM/review",
 };
 
 export default function Home() {
@@ -46,6 +47,17 @@ export default function Home() {
               <p className="mt-4 text-sm text-soft">
                 Urgence ou doute ? Un message suffit : réponse rapide.
               </p>
+
+              <div className="mt-7 flex flex-wrap gap-3">
+                <a
+                  className="btn btn-primary"
+                  target="_blank"
+                  rel="noopener"
+                  href={BRAND.reviewUrl}
+                >
+                  Laisser un avis
+                </a>
+              </div>
             </div>
 
             <div className="card overflow-hidden">

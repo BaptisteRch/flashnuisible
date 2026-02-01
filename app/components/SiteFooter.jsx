@@ -14,7 +14,7 @@ export default function SiteFooter() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-3 text-sm text-muted">
+          {/* <div className="flex flex-wrap gap-3 text-sm text-muted">
             <Link className="hover:underline" href="/deratisation">
               Dératisation
             </Link>
@@ -33,7 +33,42 @@ export default function SiteFooter() {
             <a className="hover:underline" href={BRAND.phoneHref}>
               Appeler
             </a>
-          </div>
+          </div> */}
+        </div>
+
+        <div className="flex flex-wrap gap-3 text-sm text-muted mt-4">
+          <Link
+            className="hover:underline"
+            target="_blank"
+            rel="noopener"
+            href="https://www.instagram.com/flashnuisible/"
+          >
+            Intagram
+          </Link>
+          <Link
+            className="hover:underline"
+            target="_blank"
+            rel="noopener"
+            href="https://www.facebook.com/p/Flash-Nuisible-61562710695560/"
+          >
+            Facebook
+          </Link>
+          <Link
+            className="hover:underline"
+            target="_blank"
+            rel="noopener"
+            href="https://www.tiktok.com/@flashnuisible"
+          >
+            TikTok
+          </Link>
+          <Link
+            className="hover:underline"
+            target="_blank"
+            rel="noopener"
+            href="https://fr.linkedin.com/company/flash-nuisible"
+          >
+            LinkedIn
+          </Link>
         </div>
 
         <div className="mt-8 text-xs text-faint">
