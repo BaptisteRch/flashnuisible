@@ -43,7 +43,7 @@ export default function SiteFooter() {
             rel="noopener"
             href="https://www.instagram.com/flashnuisible/"
           >
-            Intagram
+            Instagram
           </Link>
           <Link
             className="hover:underline"
