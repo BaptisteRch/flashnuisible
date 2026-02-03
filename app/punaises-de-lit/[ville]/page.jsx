@@ -8,8 +8,10 @@ import { buildLocalMetadata } from "../../lib/seo";
 import { getCity, generateCityParams } from "../../lib/cities";
 
 export function generateStaticParams() {
-  return generateCityParams("ville");
+  return getFeaturedCities().map((c) => ({ ville: c.slug }));
 }
+
+export const revalidate = 60 * 60 * 24 * 30; // 30 jours
 
 export async function generateMetadata({ params }) {
   const { ville } = await params;
