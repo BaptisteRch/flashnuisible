@@ -4,7 +4,7 @@ import SiteHeader from "../../components/SiteHeader";
 import SiteFooter from "../../components/SiteFooter";
 import ContactSection from "../../components/ContactSection";
 import { buildLocalMetadata } from "../../lib/seo";
-import { getCity, generateCityParams } from "../../lib/cities";
+import { getCity, getFeaturedCities } from "../../lib/cities";
 
 export function generateStaticParams() {
   return getFeaturedCities().map((c) => ({ ville: c.slug }));
