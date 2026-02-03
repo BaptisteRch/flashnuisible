@@ -37,41 +37,41 @@ export default function SiteFooter() {
         </div>
 
         <div className="flex flex-wrap gap-3 text-sm text-muted mt-4">
-          <Link
+          <a
             className="hover:underline"
             target="_blank"
             rel="noopener"
             href="https://www.instagram.com/flashnuisible/"
           >
             Instagram
-          </Link>
-          <Link
+          </a>
+          <a
             className="hover:underline"
             target="_blank"
             rel="noopener"
             href="https://www.facebook.com/p/Flash-Nuisible-61562710695560/"
           >
             Facebook
-          </Link>
-          <Link
+          </a>
+          <a
             className="hover:underline"
             target="_blank"
             rel="noopener"
             href="https://www.tiktok.com/@flashnuisible"
           >
             TikTok
-          </Link>
-          <Link
+          </a>
+          <a
             className="hover:underline"
             target="_blank"
             rel="noopener"
             href="https://fr.linkedin.com/company/flash-nuisible"
           >
             LinkedIn
-          </Link>
+          </a>
         </div>
 
-        <div className="mt-8 text-xs text-faint">
+        <div className="mt-8 text-xs">
           © {new Date().getFullYear()} Flash Nuisible — Tous droits réservés.
         </div>
       </Container>

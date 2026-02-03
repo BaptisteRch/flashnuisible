@@ -2,17 +2,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 import ContactSection from "./components/ContactSection";
 import ServiceCards from "./components/ServiceCards";
 import FieldGallery from "./components/FieldGallery";
-
-const BRAND = {
-  phoneDisplay: "07 70 35 33 41",
-  phoneHref: "tel:+33770353341",
-  reviewUrl: "https://g.page/r/CSENTpfsjv-MEBM/review",
-};
+import SiteHeader, { BRAND } from "./components/SiteHeader";
 
 export default function Home() {
   return (
@@ -60,26 +54,41 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="card overflow-hidden">
+            <a
+              href="/presentation"
+              className="group relative card overflow-hidden cursor-pointer"
+            >
               <Image
                 src="/images/flash/truck-basilique-wide.jpg"
                 alt="Camion Flash Nuisible en intervention"
                 width={1400}
                 height={1000}
-                className="w-full h-[320px] md:h-[420px] object-cover"
+                className="w-full h-[320px] md:h-[420px] object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                 priority
               />
-            </div>
+
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/35 transition-colors" />
+
+              {/* Label */}
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-black shadow">
+                  <span>Découvrir Flash Nuisible</span>
+                  <span aria-hidden>→</span>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </section>
-
-      <ServiceCards />
+      <section id="services">
+        <ServiceCards />
+      </section>
       <FieldGallery />
 
       {/* CONTACT */}
       <section className="section on-dark" id="contact">
-        <div className="mx-auto max-w-7xl px-6 bg-[#1b1919]">
+        <div className="mx-auto max-w-7xl px-6">
           <ContactSection />
         </div>
       </section>

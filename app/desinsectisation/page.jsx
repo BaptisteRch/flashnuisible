@@ -1,80 +1,306 @@
 // app/desinsectisation/page.jsx
 import Image from "next/image";
+import Link from "next/link";
+
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import ContactSection from "../components/ContactSection";
 
-const BRAND = {
-  phoneDisplay: "07 70 35 33 41",
-  phoneHref: "tel:+33770353341",
-};
+function Split({ reverse = false, title, children, image }) {
+  return (
+    <section className="section">
+      <div className="mx-auto max-w-7xl px-6">
+        <div
+          className={`grid gap-8 items-start md:grid-cols-2 ${
+            reverse ? "md:[&>*:first-child]:order-2" : ""
+          }`}
+        >
+          <div>
+            {title ? (
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+                {title}
+              </h2>
+            ) : null}
+            <div className={title ? "mt-4" : ""}>{children}</div>
+          </div>
+
+          <div className="grid gap-4">
+            <div className="card overflow-hidden">{image}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function DesinsectisationPage() {
   return (
     <main className="page">
       <SiteHeader />
 
+      {/* HERO */}
       <section className="section">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] items-start">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-                Désinsectisation
-              </h1>
-              <p className="mt-3 text-muted">
-                Punaises de lit, cafards, fourmis, guêpes/frelons et autres
-                insectes : intervention efficace et prévention.
+        <div className="mx-auto max-w-7xl px-6">
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+            Désinsectisation
+          </h1>
+          <p className="mt-3 text-muted font-semibold">
+            Traitement des insectes nuisibles : punaises de lit, cafards,
+            fourmis, moustiques, mouches
+          </p>
+
+          <div className="mt-6 grid gap-6 md:grid-cols-[1.1fr_0.9fr] items-start">
+            <div className="space-y-3">
+              <p className="text-muted">
+                La désinsectisation permet d’éliminer efficacement les insectes
+                nuisibles présents dans un logement et de limiter durablement
+                les risques de récidive. Flash Nuisible intervient auprès des
+                particuliers pour tout problème d’infestation d’insectes, avec
+                des solutions professionnelles adaptées à chaque situation.
               </p>
 
-              <div className="mt-10 grid gap-4">
-                <div className="card p-6">
-                  <div className="font-extrabold">Intervention typique</div>
-                  <ul className="mt-3 list-disc pl-5 text-muted space-y-2">
-                    <li>Analyse du contexte (pièces, accès, niveau).</li>
-                    <li>Traitement adapté au nuisible identifié.</li>
-                    <li>Conseils de prévention et sécurisation.</li>
-                  </ul>
-                </div>
+              <p className="text-muted">
+                Chaque traitement est conçu pour être{" "}
+                <strong>rapide, ciblé et efficace</strong>, en tenant compte du
+                type d’insecte, du niveau d’infestation et de l’environnement à
+                traiter.
+              </p>
 
-                <div className="card p-6">
-                  <div className="font-extrabold">
-                    Exemples de nuisibles traités
-                  </div>
-                  <p className="mt-2 text-muted">
-                    Punaises de lit • Cafards • Fourmis • Anthrènes • Guêpes /
-                    Frelons • Insectes volants
-                  </p>
-                </div>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a href="#contact" className="btn btn-primary">
+                  Demander un devis
+                </a>
+                <a href="/#services" className="btn btn-ghost">
+                  Voir les services
+                </a>
               </div>
             </div>
 
-            <div className="grid gap-4">
-              <div className="card overflow-hidden">
-                <Image
-                  src="/images/flash/action-machine.jpg"
-                  alt="Intervention technique de désinsectisation"
-                  width={1200}
-                  height={900}
-                  className="h-[320px] w-full object-cover"
-                  priority
-                />
-              </div>
-              <div className="card overflow-hidden">
-                <Image
-                  src="/images/flash/truck-hood.jpg"
-                  alt="Camion Flash Nuisible"
-                  width={1200}
-                  height={900}
-                  className="h-[220px] w-full object-cover"
-                />
-              </div>
+            <div className="card overflow-hidden">
+              <Image
+                src="/images/flash/action-machine.jpg"
+                alt="Intervention de désinsectisation"
+                width={1200}
+                height={900}
+                className="h-[280px] md:h-[320px] w-full object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section on-dark">
-        <div className="mx-auto max-w-6xl px-6">
+      {/* Punaises de lit */}
+      <Split
+        title="Punaises de lit"
+        image={
+          <Image
+            src="/images/flash/action-talk.jpg"
+            alt="Diagnostic et protocole punaises de lit"
+            width={1200}
+            height={900}
+            className="h-[280px] md:h-[360px] w-full object-cover"
+          />
+        }
+      >
+        <p className="text-muted">
+          Les punaises de lit sont parmi les nuisibles les plus complexes à
+          éliminer. Un traitement incomplet ou mal adapté entraîne très souvent
+          une réinfestation.
+        </p>
+
+        <p className="mt-3 text-muted">
+          Flash Nuisible propose un traitement professionnel des punaises de
+          lit, combinant selon les cas <strong>traitement chimique</strong> et{" "}
+          <strong>traitement vapeur</strong>, avec{" "}
+          <strong>deux passages espacés de 15 jours</strong>.
+        </p>
+
+        <p className="mt-3 text-muted">
+          Un diagnostic et un devis gratuits par téléphone permettent
+          d’intervenir rapidement, généralement sous <strong>48h</strong>.
+        </p>
+
+        <p className="mt-3 text-muted">
+          Un protocole précis est communiqué au client, avec des consignes
+          claires avant, pendant, entre les deux passages et après le
+          traitement, afin d’optimiser l’efficacité et d’éviter toute
+          recontamination.
+        </p>
+
+        <p className="mt-3 text-muted">
+          La prise en charge inclut un <strong>accompagnement complet</strong>,
+          indispensable pour ce type d’infestation.
+        </p>
+      </Split>
+
+      {/* Cafards / blattes */}
+      <Split
+        reverse
+        title="Cafards / blattes"
+        image={
+          <Image
+            src="/images/flash/action-bw-rack.jpg"
+            alt="Traitement cafards et blattes"
+            width={1200}
+            height={900}
+            className="h-[280px] md:h-[360px] w-full object-cover"
+          />
+        }
+      >
+        <p className="text-muted">
+          Flash Nuisible assure le traitement des cafards et blattes, tous types
+          confondus. La méthode est toujours adaptée à la gravité de
+          l’infestation :
+        </p>
+
+        <ul className="mt-4 list-disc pl-5 text-muted space-y-2">
+          <li>
+            En début d’infestation : pose de <strong>gel insecticide</strong>{" "}
+            professionnel pour éliminer rapidement.
+          </li>
+          <li>
+            En cas d’infestation installée : <strong>deux poses de gel</strong>{" "}
+            réalisées à <strong>30 jours</strong> d’intervalle.
+          </li>
+          <li>
+            Pour une infestation importante :{" "}
+            <strong>pulvérisation insecticide</strong>, suivie 15 jours plus
+            tard d’une pose de gel.
+          </li>
+        </ul>
+
+        <p className="mt-4 text-muted">
+          Le gel agit par contamination : les cafards s’en nourrissent puis
+          propagent le traitement au sein de la colonie, ce qui permet
+          d’éliminer les individus visibles et cachés.
+        </p>
+
+        <p className="mt-3 text-muted">
+          Un suivi, accompagné de recommandations d’hygiène et de prévention,
+          permet de limiter efficacement les récidives.
+        </p>
+      </Split>
+
+      {/* Fourmis */}
+      <Split
+        title="Fourmis"
+        image={
+          <Image
+            src="/images/flash/action-office.jpg"
+            alt="Traitement des fourmis"
+            width={1200}
+            height={900}
+            className="h-[280px] md:h-[360px] w-full object-cover"
+          />
+        }
+      >
+        <p className="text-muted">
+          Flash Nuisible intervient pour le traitement des fourmis, y compris
+          les
+          <strong> fourmis charpentières</strong>, responsables de dégâts plus
+          importants.
+        </p>
+
+        <p className="mt-3 text-muted">
+          Un traitement efficace consiste à <strong>cibler la colonie</strong>,
+          et non uniquement les fourmis visibles. Les interventions peuvent être
+          réalisées en intérieur et en extérieur, selon la localisation de la
+          colonie et les points d’entrée, afin d’obtenir des résultats durables.
+        </p>
+      </Split>
+
+      {/* Moustiques */}
+      <Split
+        reverse
+        title="Moustiques"
+        image={
+          <Image
+            src="/images/flash/truck-hood.jpg"
+            alt="Traitements moustiques en extérieur"
+            width={1200}
+            height={900}
+            className="h-[280px] md:h-[360px] w-full object-cover"
+          />
+        }
+      >
+        <p className="text-muted">
+          Les traitements contre les moustiques sont réalisés{" "}
+          <strong>exclusivement en extérieur</strong>, autour des maisons,
+          jardins et terrasses.
+        </p>
+
+        <p className="mt-3 text-muted">
+          Flash Nuisible propose des traitements curatifs et préventifs visant à
+          réduire significativement leur présence et à améliorer le confort de
+          vie, notamment en période estivale.
+        </p>
+
+        <p className="mt-3 text-muted">
+          L’objectif n’est pas de promettre une disparition totale, mais une{" "}
+          <strong>réduction efficace et maîtrisée</strong> des nuisances.
+        </p>
+      </Split>
+
+      {/* Mouches + Réactivité (pleine largeur) */}
+      <section className="section">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid gap-10">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+                Mouches
+              </h2>
+              <p className="mt-4 text-muted">
+                La présence excessive de mouches concerne aussi bien les maisons
+                que les appartements. La désinsectisation combine un traitement
+                ciblé et une approche préventive, en tenant compte des causes
+                fréquentes : accès, zones attractives, humidité ou déchets.
+              </p>
+              <p className="mt-3 text-muted">
+                L’objectif est d’agir sur l’origine du problème pour limiter
+                durablement leur présence.
+              </p>
+            </div>
+
+            <div className="glass rounded-2xl p-5">
+              <div className="font-extrabold">
+                Réactivité et cadre d’intervention
+              </div>
+              <p className="mt-3 text-muted">
+                Les interventions de désinsectisation sont réalisées sous{" "}
+                <strong>48h</strong>, <strong>7j/7</strong> et{" "}
+                <strong>24h/24</strong>, selon l’urgence.
+              </p>
+              <p className="mt-3 text-muted">
+                Les prestations sont proposées avec des{" "}
+                <strong>tarifs forfaitaires annoncés à l’avance</strong>, et un
+                devis gratuit par téléphone. Les traitements sont réalisés dans
+                une logique de respect de l’environnement, avec des produits et
+                méthodes professionnels adaptés.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+                Désinsectisation pour les professionnels
+              </h2>
+              <p className="mt-4 text-muted">
+                Flash Nuisible propose également des solutions de
+                désinsectisation pour les professionnels, avec des contrats de
+                suivi adaptés aux exigences sanitaires.{" "}
+                <Link href="/professionnels" className="underline font-bold">
+                  Découvrir la page Professionnels
+                </Link>
+                .
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACT */}
+      <section className="section on-dark" id="contact">
+        <div className="mx-auto max-w-7xl px-6">
           <ContactSection />
         </div>
       </section>

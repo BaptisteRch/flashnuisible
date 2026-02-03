@@ -1,24 +1,18 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo, useState } from "react";
-
-const BRAND = {
-  phoneDisplay: "07 70 35 33 41",
-  phoneHref: "tel:+33770353341",
-  email: "contact@flashnuisible.fr",
-  base: "Saint-Étienne",
-  region: "Auvergne-Rhône-Alpes",
-};
+import { BRAND } from "./SiteHeader";
 
 const NUISIBLE_OPTIONS = [
-  "Dératisation (rats / souris)",
+  "Dératisation (rats / souris : rongeurs)",
   "Punaises de lit",
-  "Cafards",
+  "Cafards / blattes",
+  "Moustiques",
+  "Mouches",
+  "Chenilles processionnaires",
   "Fourmis",
   "Guêpes / frelons",
-  "Insectes volants",
-  "Anthrènes",
+  "Xylophages",
   "Fouines",
   "Autre",
 ];
@@ -64,7 +58,7 @@ Envoyé depuis le site Flash Nuisible`,
   return (
     <div className="grid gap-8">
       {/* Bloc 2 : Contact */}
-      <div className="glass rounded-3xl p-6 md:p-8 bg-[#1b1919]">
+      <div className="glass rounded-3xl p-6 md:p-8">
         <div className="grid gap-8 lg:grid-cols-2 items-start">
           {/* Texte à gauche */}
           <div>
@@ -93,7 +87,7 @@ Envoyé depuis le site Flash Nuisible`,
               </div>
 
               <div className="text-soft text-orange-400">
-                📍 Basé à <strong className="text-white">{BRAND.base}</strong> —
+                📍 Basé à <strong className="text-white">{BRAND.City}</strong> —
                 interventions dans toute la région{" "}
                 <strong className="text-white">{BRAND.region}</strong>.
               </div>
@@ -121,6 +115,8 @@ Envoyé depuis le site Flash Nuisible`,
               />
 
               <input
+                type="tel"
+                autoComplete="tel"
                 className="input input-bordered"
                 name="phone"
                 placeholder="Téléphone"

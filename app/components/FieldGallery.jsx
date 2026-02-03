@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function FieldGallery() {
   const photos = [
@@ -27,9 +26,9 @@ export default function FieldGallery() {
             </h2>
             <p className="mt-2 text-muted">
               Entreprise de dératisation et désinsectisation basée à
-              Saint-Etienne : intervention chez les particuliers et les
+              Saint-Étienne : intervention chez les particuliers et les
               professionnels en Loire (42), Haute-Loire (43), Rhône (69), Ain
-              (01) et Auvergne (63).{" "}
+              (01) et Puy-de-Dôme (63).{" "}
             </p>
             <p className="mt-2 text-muted">
               Découvrez nos méthodes et contactez-nous pour un devis.

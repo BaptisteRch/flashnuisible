@@ -11,11 +11,12 @@ const BRAND = {
   baseCity: "Saint-Étienne",
   region: "Auvergne-Rhône-Alpes",
   leadTime: "RDV en moins de 48h",
+  reviewUrl: "https://g.page/r/CSENTpfsjv-MEBM/review",
 };
 
 export default function SiteHeader() {
   return (
-    <header className="header bg-[#1b1919]">
+    <header className="header">
       <Container className="flex items-center justify-between py-4">
         <Link
           href="/"

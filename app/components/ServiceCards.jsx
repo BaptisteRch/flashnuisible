@@ -25,7 +25,7 @@ export default function ServiceCards() {
     {
       title: "Guêpes & Frelons",
       desc: "Destruction de nids en toute sécurité, solutions préventives",
-      href: "/guepesFrelon",
+      href: "/guepes-frelons",
     },
     {
       title: "Xylophages",
@@ -41,7 +41,7 @@ export default function ServiceCards() {
             Un problème de nuisibles ? On s'en occupe.
           </h2>
           <div className="mt-4 text-lg font-semibold text-gradient">
-            Intervention rapide, diagnostic précis et sollution durable
+            Intervention rapide, diagnostic précis et solution durable
           </div>
           <div className="mt-4 text-lg font-semibold text-gradient">
             <b>Disponible 24h/24 et 7j/7</b>
@@ -53,7 +53,7 @@ export default function ServiceCards() {
             <Link
               key={it.title}
               href={it.href}
-              className="card card-hover p-6 flex items-start justify-between gap-6"
+              className="card-clic p-6 flex items-start justify-between gap-6"
             >
               <div>
                 <div className="text-xl font-extrabold tracking-tight">
