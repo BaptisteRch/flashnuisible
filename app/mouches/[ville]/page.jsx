@@ -16,10 +16,10 @@ export async function generateMetadata({ params }) {
   if (!city) return { title: "Flash Nuisible" };
 
   return buildLocalMetadata({
-    serviceLabel: "Dératisation",
+    serviceLabel: "Mouches",
     cityName: city.name,
     area: city.area || "Auvergne-Rhône-Alpes",
-    slugPath: `deratisation/${city.slug}`,
+    slugPath: `mouche/${city.slug}`,
   });
 }
 
