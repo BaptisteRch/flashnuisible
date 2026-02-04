@@ -5,6 +5,7 @@ import SiteFooter from "../../components/SiteFooter";
 import ContactSection from "../../components/ContactSection";
 import { buildLocalMetadata } from "../../lib/seo";
 import { getCity, getFeaturedCities } from "../../lib/cities";
+import SeoJsonLd from "../../components/SeoJsonLd";
 
 export function generateStaticParams() {
   return getFeaturedCities().map((c) => ({ ville: c.slug }));
@@ -33,10 +34,82 @@ export default async function MouchesVillePage({ params }) {
 
   const VILLE = city.name;
   const AREA = city.area || "Auvergne-Rhône-Alpes";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Accueil",
+            item: "https://www.flashnuisible.fr/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Mouches",
+            item: "https://www.flashnuisible.fr/mouches",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: `Mouches à ${VILLE}`,
+            item: `https://www.flashnuisible.fr/mouches/${city.slug}`,
+          },
+        ],
+      },
+      {
+        "@type": "LocalBusiness",
+        name: "Flash Nuisible",
+        telephone: "+33770353341",
+        url: "https://www.flashnuisible.fr",
+        areaServed: AREA,
+      },
+      {
+        "@type": "Service",
+        name: `Traitement des mouches à ${VILLE}`,
+        provider: { "@type": "LocalBusiness", name: "Flash Nuisible" },
+        areaServed: VILLE,
+        serviceType: "Désinsectisation",
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: `Intervenez-vous rapidement pour un traitement des mouches à ${VILLE} ?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Oui. Flash Nuisible intervient généralement sous 48h, avec une disponibilité 7j/7 et 24h/24 selon l’urgence.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: `Comment se déroule un traitement des mouches à ${VILLE} ?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Un diagnostic permet d’identifier l’origine (accès, zones attractives, humidité, déchets), puis un traitement ciblé est mis en place, complété par des actions de prévention pour limiter les récidives.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: `Pourquoi les mouches reviennent-elles malgré les solutions grand public ?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Parce que le problème vient souvent d’une cause précise (points d’entrée, zones attractives, humidité). Agir à la source, en plus du traitement, est essentiel pour un résultat durable.",
+            },
+          },
+        ],
+      },
+    ],
+  };
 
   return (
     <main className="page">
       <SiteHeader />
+      <SeoJsonLd json={jsonLd} />
 
       <section className="section">
         <div className="mx-auto max-w-7xl px-6 space-y-12">

@@ -6,7 +6,9 @@ import SiteFooter from "./components/SiteFooter";
 import ContactSection from "./components/ContactSection";
 import ServiceCards from "./components/ServiceCards";
 import FieldGallery from "./components/FieldGallery";
+import Collaboration from "./components/Collaborations";
 import SiteHeader, { BRAND } from "./components/SiteHeader";
+import Collaborations from "./components/Collaborations";
 
 export default function Home() {
   return (
@@ -85,6 +87,7 @@ export default function Home() {
         <ServiceCards />
       </section>
       <FieldGallery />
+      <Collaborations />
 
       {/* CONTACT */}
       <section className="section on-dark" id="contact">

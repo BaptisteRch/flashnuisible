@@ -5,6 +5,7 @@ import SiteFooter from "../../components/SiteFooter";
 import ContactSection from "../../components/ContactSection";
 import { buildLocalMetadata } from "../../lib/seo";
 import { getCity, getFeaturedCities } from "../../lib/cities";
+import SeoJsonLd from "../../components/SeoJsonLd";
 
 export function generateStaticParams() {
   return getFeaturedCities().map((c) => ({ ville: c.slug }));
@@ -33,10 +34,82 @@ export default async function MoustiquesVillePage({ params }) {
 
   const VILLE = city.name;
   const AREA = city.area || "Auvergne-Rhône-Alpes";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Accueil",
+            item: "https://www.flashnuisible.fr/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Moustiques",
+            item: "https://www.flashnuisible.fr/moustiques",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: `Moustiques à ${VILLE}`,
+            item: `https://www.flashnuisible.fr/moustiques/${city.slug}`,
+          },
+        ],
+      },
+      {
+        "@type": "LocalBusiness",
+        name: "Flash Nuisible",
+        telephone: "+33770353341",
+        url: "https://www.flashnuisible.fr",
+        areaServed: AREA,
+      },
+      {
+        "@type": "Service",
+        name: `Traitement des moustiques à ${VILLE}`,
+        provider: { "@type": "LocalBusiness", name: "Flash Nuisible" },
+        areaServed: VILLE,
+        serviceType: "Désinsectisation",
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: `Intervenez-vous rapidement pour un traitement des moustiques à ${VILLE} ?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Oui. Flash Nuisible intervient généralement sous 48h, avec une disponibilité 7j/7 et 24h/24, notamment en période estivale selon l’urgence.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Un traitement anti-moustiques élimine-t-il tous les moustiques ?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Non. L’objectif est une réduction efficace et maîtrisée des nuisances afin d’améliorer le confort de vie, sans promettre une disparition totale.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: `Où se fait l’intervention anti-moustiques à ${VILLE} ?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Les traitements moustiques sont réalisés exclusivement en extérieur : jardins, terrasses et abords des habitations, avec une approche curative et préventive selon les zones à risque.",
+            },
+          },
+        ],
+      },
+    ],
+  };
 
   return (
     <main className="page">
       <SiteHeader />
+      <SeoJsonLd json={jsonLd} />
 
       <section className="section">
         <div className="mx-auto max-w-7xl px-6 space-y-12">

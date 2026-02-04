@@ -5,6 +5,7 @@ import SiteFooter from "../../components/SiteFooter";
 import ContactSection from "../../components/ContactSection";
 import { buildLocalMetadata } from "../../lib/seo";
 import { getCity, getFeaturedCities } from "../../lib/cities";
+import SeoJsonLd from "../../components/SeoJsonLd";
 
 export function generateStaticParams() {
   return getFeaturedCities().map((c) => ({ ville: c.slug }));
@@ -18,10 +19,10 @@ export async function generateMetadata({ params }) {
   if (!city) return { title: "Flash Nuisible" };
 
   return buildLocalMetadata({
-    serviceLabel: "Dératisation",
+    serviceLabel: "Xylophages",
     cityName: city.name,
     area: city.area || "Auvergne-Rhône-Alpes",
-    slugPath: `deratisation/${city.slug}`,
+    slugPath: `xylophages/${city.slug}`,
   });
 }
 
@@ -33,10 +34,82 @@ export default async function XylophagesVillePage({ params }) {
 
   const VILLE = city.name;
   const AREA = city.area || "Auvergne-Rhône-Alpes";
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Accueil",
+            item: "https://www.flashnuisible.fr/",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Xylophages",
+            item: "https://www.flashnuisible.fr/xylophages",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: `Xylophages à ${VILLE}`,
+            item: `https://www.flashnuisible.fr/xylophages/${city.slug}`,
+          },
+        ],
+      },
+      {
+        "@type": "LocalBusiness",
+        name: "Flash Nuisible",
+        telephone: "+33770353341",
+        url: "https://www.flashnuisible.fr",
+        areaServed: AREA,
+      },
+      {
+        "@type": "Service",
+        name: `Traitement des insectes xylophages à ${VILLE}`,
+        provider: { "@type": "LocalBusiness", name: "Flash Nuisible" },
+        areaServed: VILLE,
+        serviceType: "Traitement du bois / Xylophages",
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: `Faut-il un diagnostic sur place pour un traitement xylophages à ${VILLE} ?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Oui. Un diagnostic sur place est indispensable pour analyser l’état réel du bois, identifier les zones infestées et proposer un devis gratuit adapté.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Comment se déroule un traitement des insectes xylophages ?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Le traitement comprend le brossage du bois, le perçage des éléments, l’injection du produit au cœur des structures, puis une pulvérisation de surface réalisée deux fois (avec un retour le lendemain) pour une protection optimale.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: `Le traitement xylophages est-il curatif ou préventif à ${VILLE} ?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Les deux. Le traitement peut être curatif lorsque le bois est déjà attaqué, ou préventif pour protéger une structure saine exposée au risque, afin de préserver le bâti sur le long terme.",
+            },
+          },
+        ],
+      },
+    ],
+  };
 
   return (
     <main className="page">
       <SiteHeader />
+      <SeoJsonLd json={jsonLd} />
 
       <section className="section">
         <div className="mx-auto max-w-7xl px-6 space-y-12">
