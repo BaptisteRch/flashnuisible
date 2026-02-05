@@ -10,6 +10,10 @@ export default function Collaborations() {
     { src: "/images/orpi.jpg", alt: "Logo Orpi" },
     { src: "/images/inter-nett.jpg", alt: "Logo Inter-nett" },
     { src: "/images/condamin.svg", alt: "Logo Condamin" },
+    { src: "/images/kia.jpg", alt: "Logo Kia" },
+    { src: "/images/victor.jpg", alt: "Logo Victor gestion" },
+    { src: "/images/alain.jpg", alt: "Logo Alain Tronchet Immobilier" },
+    { src: "/images/compagnie.svg", alt: "Logo La Compagnie des Déboucheurs" },
   ];
 
   return (
