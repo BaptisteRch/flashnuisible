@@ -52,31 +52,27 @@ export default function ReviewsCarousel({
   reviews = DEFAULT_REVIEWS,
 }) {
   const list = useMemo(() => reviews?.filter(Boolean) ?? [], [reviews]);
-
   const scrollerRef = useRef(null);
 
-  // Drag souris only (refs => pas de re-render pendant drag)
+  // Drag desktop only
   const draggingRef = useRef(false);
   const startXRef = useRef(0);
   const startScrollLeftRef = useRef(0);
   const rafRef = useRef(0);
   const latestDxRef = useRef(0);
-
   const [isDraggingUi, setIsDraggingUi] = useState(false);
 
   if (!list.length) return null;
 
   function onPointerDown(e) {
-    // ✅ on active le drag UNIQUEMENT à la souris (pas touch, pas pen)
-    if (e.pointerType !== "mouse") return;
-    if (e.button !== 0) return;
+    // ✅ On ne gère QUE la souris. Sur mobile: aucun handling -> swipe natif.
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
 
     const el = scrollerRef.current;
     if (!el) return;
 
     draggingRef.current = true;
     setIsDraggingUi(true);
-
     el.setPointerCapture?.(e.pointerId);
 
     startXRef.current = e.clientX;
@@ -91,8 +87,7 @@ export default function ReviewsCarousel({
     const el = scrollerRef.current;
     if (!el) return;
 
-    const dx = e.clientX - startXRef.current;
-    latestDxRef.current = dx;
+    latestDxRef.current = e.clientX - startXRef.current;
 
     if (rafRef.current) return;
     rafRef.current = requestAnimationFrame(() => {
@@ -111,9 +106,7 @@ export default function ReviewsCarousel({
     if (el && e?.pointerId != null) {
       try {
         el.releasePointerCapture?.(e.pointerId);
-      } catch {
-        // ignore
-      }
+      } catch {}
     }
 
     if (rafRef.current) {
@@ -145,22 +138,21 @@ export default function ReviewsCarousel({
           ) : null}
         </div>
 
-        {/* ✅ Mobile: snap (1 avis à la fois) | Desktop: scroll libre + drag souris */}
         <div
           ref={scrollerRef}
           className={[
             "mt-8 flex gap-4 overflow-x-auto pb-3",
-            // Mobile snap
+            // ✅ Mobile: 1 avis par swipe (snap)
             "snap-x snap-mandatory",
-            // Desktop: pas de snap
+            // ✅ Desktop: pas de snap
             "md:snap-none",
             isDraggingUi ? "cursor-grabbing" : "cursor-grab",
           ].join(" ")}
           style={{
             WebkitOverflowScrolling: "touch",
             overscrollBehaviorX: "contain",
-            // laisse le swipe horizontal + scroll vertical de page
-            touchAction: "pan-y",
+            // ✅ laisse le navigateur gérer le swipe horizontal naturellement
+            touchAction: "auto",
           }}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
@@ -173,9 +165,9 @@ export default function ReviewsCarousel({
               key={`${r.name}-${i}`}
               className={[
                 "card p-6 shrink-0",
-                // ✅ Mobile: 1 carte quasi pleine largeur + snap
+                // ✅ Mobile: une carte plein focus
                 "w-[92%] snap-center",
-                // ✅ Desktop: plusieurs cartes visibles + pas besoin de snap
+                // ✅ Desktop: plusieurs cartes visibles
                 "md:w-[60%] lg:w-[40%]",
               ].join(" ")}
               style={{ userSelect: isDraggingUi ? "none" : "auto" }}
