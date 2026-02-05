@@ -55,7 +55,7 @@ export default function ReviewsCarousel({
 
   const scrollerRef = useRef(null);
 
-  // Drag state (refs = pas de re-render pendant le drag)
+  // Drag souris only (refs => pas de re-render pendant drag)
   const draggingRef = useRef(false);
   const startXRef = useRef(0);
   const startScrollLeftRef = useRef(0);
@@ -67,8 +67,9 @@ export default function ReviewsCarousel({
   if (!list.length) return null;
 
   function onPointerDown(e) {
-    // uniquement clic gauche souris (pointerType "mouse") OU touch/pen
-    if (e.pointerType === "mouse" && e.button !== 0) return;
+    // ✅ on active le drag UNIQUEMENT à la souris (pas touch, pas pen)
+    if (e.pointerType !== "mouse") return;
+    if (e.button !== 0) return;
 
     const el = scrollerRef.current;
     if (!el) return;
@@ -76,14 +77,12 @@ export default function ReviewsCarousel({
     draggingRef.current = true;
     setIsDraggingUi(true);
 
-    // capture : on continue à recevoir les events même si on sort du div
     el.setPointerCapture?.(e.pointerId);
 
     startXRef.current = e.clientX;
     startScrollLeftRef.current = el.scrollLeft;
     latestDxRef.current = 0;
 
-    // évite sélection de texte / drag d’images
     e.preventDefault();
   }
 
@@ -95,7 +94,6 @@ export default function ReviewsCarousel({
     const dx = e.clientX - startXRef.current;
     latestDxRef.current = dx;
 
-    // throttle à 1 update par frame
     if (rafRef.current) return;
     rafRef.current = requestAnimationFrame(() => {
       rafRef.current = 0;
@@ -105,6 +103,7 @@ export default function ReviewsCarousel({
 
   function stopDrag(e) {
     if (!draggingRef.current) return;
+
     draggingRef.current = false;
     setIsDraggingUi(false);
 
@@ -146,17 +145,21 @@ export default function ReviewsCarousel({
           ) : null}
         </div>
 
+        {/* ✅ Mobile: snap (1 avis à la fois) | Desktop: scroll libre + drag souris */}
         <div
           ref={scrollerRef}
           className={[
             "mt-8 flex gap-4 overflow-x-auto pb-3",
-            // pas de snap => scroll libre
+            // Mobile snap
+            "snap-x snap-mandatory",
+            // Desktop: pas de snap
+            "md:snap-none",
             isDraggingUi ? "cursor-grabbing" : "cursor-grab",
           ].join(" ")}
           style={{
             WebkitOverflowScrolling: "touch",
             overscrollBehaviorX: "contain",
-            // important : évite que le navigateur interprète le drag comme un geste de page
+            // laisse le swipe horizontal + scroll vertical de page
             touchAction: "pan-y",
           }}
           onPointerDown={onPointerDown}
@@ -168,8 +171,13 @@ export default function ReviewsCarousel({
           {list.map((r, i) => (
             <article
               key={`${r.name}-${i}`}
-              className="card shrink-0 w-[86%] sm:w-[60%] lg:w-[40%] p-6"
-              // évite que le texte soit sélectionné pendant un drag
+              className={[
+                "card p-6 shrink-0",
+                // ✅ Mobile: 1 carte quasi pleine largeur + snap
+                "w-[92%] snap-center",
+                // ✅ Desktop: plusieurs cartes visibles + pas besoin de snap
+                "md:w-[60%] lg:w-[40%]",
+              ].join(" ")}
               style={{ userSelect: isDraggingUi ? "none" : "auto" }}
             >
               <div className="flex items-start justify-between gap-4">
