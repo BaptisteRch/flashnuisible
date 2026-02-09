@@ -38,6 +38,9 @@ export default function Home() {
                 <a className="btn btn-ghost" href="#contact">
                   Demander un devis
                 </a>
+                <a className="btn btn-ghost" href="/urgences">
+                  Urgences
+                </a>
               </div>
 
               <p className="mt-4 text-sm text-soft">
