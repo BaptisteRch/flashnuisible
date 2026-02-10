@@ -3,7 +3,7 @@ import Image from "next/image";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import ContactSection from "../components/ContactSection";
-import Values from "../components/Values";
+import PressSection from "../components/PressSection";
 
 export default function PresentationPage() {
   return (
@@ -12,7 +12,7 @@ export default function PresentationPage() {
 
       {/* HERO */}
       <section className="section">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-7xl px-6">
           <div className="grid gap-8 lg:grid-cols-2 items-start">
             <div>
               <span className="badge">Flash Nuisible</span>
@@ -55,7 +55,7 @@ export default function PresentationPage() {
 
       {/* CONTENU ÉDITORIAL */}
       <section className="section">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-7xl px-6">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
               Une autre approche de la lutte contre les nuisibles
@@ -176,11 +176,12 @@ export default function PresentationPage() {
             </p>
           </div>
         </div>
+        <PressSection />
       </section>
 
       {/* CONTACT */}
       <section className="section on-dark" id="contact">
-        <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-7xl px-6">
           <ContactSection />
         </div>
       </section>
