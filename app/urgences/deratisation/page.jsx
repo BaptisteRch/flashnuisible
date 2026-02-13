@@ -6,6 +6,7 @@ import SiteFooter from "../../components/SiteFooter";
 import ContactSection from "../../components/ContactSection";
 
 export const metadata = {
+  alternates: { canonical: "/urgences/deratisation" },
   title:
     "Urgence dératisation (rats & souris) — Intervention rapide | Flash Nuisible",
   description:

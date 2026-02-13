@@ -5,6 +5,7 @@ import SiteFooter from "../../components/SiteFooter";
 import ContactSection from "../../components/ContactSection";
 
 export const metadata = {
+  alternates: { canonical: "/problemes/deratisation" },
   title:
     "Problèmes de rongeurs : signes, risques et solutions — Flash Nuisible",
   description:
@@ -732,7 +733,7 @@ export default function Page() {
                     lourdes.
                   </p>
                   <p className="text-muted">
-                    Contactez Flash Nuisible pour un diagnostic 
+                    Contactez Flash Nuisible pour un diagnostic
                     <br />
                     Devis gratuit et intervention sur demande
                   </p>

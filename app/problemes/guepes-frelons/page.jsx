@@ -5,6 +5,7 @@ import SiteFooter from "../../components/SiteFooter";
 import ContactSection from "../../components/ContactSection";
 
 export const metadata = {
+  alternates: { canonical: "/problemes/guepes-frelons" },
   title:
     "Problèmes guêpes & frelons : nid, danger, agressivité, intervention — Flash Nuisible",
   description:

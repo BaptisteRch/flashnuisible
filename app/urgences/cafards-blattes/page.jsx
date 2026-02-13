@@ -6,6 +6,7 @@ import SiteFooter from "../../components/SiteFooter";
 import ContactSection from "../../components/ContactSection";
 
 export const metadata = {
+  alternates: { canonical: "/urgences/cafard-blattes" },
   title: "Urgence cafards / blattes — Intervention rapide | Flash Nuisible",
   description:
     "Urgence cafards/blattes : désinsectisation rapide et ciblée. Diagnostic, traitement professionnel, conseils de prévention. Devis gratuit sur demande.",

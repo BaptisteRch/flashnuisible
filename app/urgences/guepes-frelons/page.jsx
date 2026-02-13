@@ -6,6 +6,7 @@ import SiteFooter from "../../components/SiteFooter";
 import ContactSection from "../../components/ContactSection";
 
 export const metadata = {
+  alternates: { canonical: "/urgences/guepes-frelons" },
   title:
     "Urgence guêpes / frelons — Intervention rapide et sécurisée | Flash Nuisible",
   description:

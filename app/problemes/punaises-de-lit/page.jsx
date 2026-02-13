@@ -5,6 +5,7 @@ import SiteFooter from "../../components/SiteFooter";
 import ContactSection from "../../components/ContactSection";
 
 export const metadata = {
+  alternates: { canonical: "/problemes/punaises-de-lit" },
   title:
     "Problèmes de punaises de lit : signes, risques et solutions — Flash Nuisible",
   description:

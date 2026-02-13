@@ -5,6 +5,7 @@ import SiteFooter from "../../components/SiteFooter";
 import ContactSection from "../../components/ContactSection";
 
 export const metadata = {
+  alternates: { canonical: "/problemes/cafards-blattes" },
   title:
     "Problèmes cafards : prévention, infestation et solutions — Flash Nuisible",
   description:

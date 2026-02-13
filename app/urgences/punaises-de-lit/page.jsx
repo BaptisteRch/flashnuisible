@@ -6,6 +6,7 @@ import SiteFooter from "../../components/SiteFooter";
 import ContactSection from "../../components/ContactSection";
 
 export const metadata = {
+  alternates: { canonical: "/urgences/punaises-de-lit" },
   title:
     "Urgence punaises de lit — Intervention rapide et discrète | Flash Nuisible",
   description:

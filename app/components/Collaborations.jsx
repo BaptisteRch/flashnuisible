@@ -14,6 +14,10 @@ export default function Collaborations() {
     { src: "/images/victor.jpg", alt: "Logo Victor gestion" },
     { src: "/images/alain.jpg", alt: "Logo Alain Tronchet Immobilier" },
     { src: "/images/compagnie.svg", alt: "Logo La Compagnie des Déboucheurs" },
+    { src: "/images/rivoire-paysage.jpg", alt: "Logo Rivoire Paysage" },
+    { src: "/images/planb.jpg", alt: "Logo Plan B Nettoyage" },
+    { src: "/images/cle-des-sols2.jpg", alt: "Logo La clé ses Sols" },
+    { src: "/images/chazelle.jpg", alt: "Logo Chazelle Construction" },
   ];
 
   return (
