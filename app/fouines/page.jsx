@@ -79,7 +79,7 @@ export default function FouinesPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/flash/fouines1.JPG"
+                src="/images/flash/fouines1.webp"
                 alt="Intervention Flash Nuisible - protection fouines"
                 width={1200}
                 height={900}
@@ -96,7 +96,7 @@ export default function FouinesPage() {
         title="Quels sont les dégâts causés par une fouine ?"
         image={
           <Image
-            src="/images/flash/fouines.JPG"
+            src="/images/flash/fouines.webp"
             alt="Inspection et repérage des zones sensibles"
             width={1200}
             height={900}
@@ -129,7 +129,7 @@ export default function FouinesPage() {
         title="Comment se déroule une intervention Flash Nuisible ?"
         image={
           <Image
-            src="/images/flash/camion2.JPG"
+            src="/images/flash/camion2.webp"
             alt="Diagnostic et plan d'intervention"
             width={1200}
             height={900}

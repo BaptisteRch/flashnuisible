@@ -85,7 +85,7 @@ export default function ProfessionnelsPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/flash/action-bw-coffee.jpg"
+                src="/images/flash/action-bw-coffee.webp"
                 alt="Intervention en environnement professionnel"
                 width={1200}
                 height={900}
@@ -102,7 +102,7 @@ export default function ProfessionnelsPage() {
         title="Problématiques traitées chez les professionnels"
         image={
           <Image
-            src="/images/flash/pro3.JPG"
+            src="/images/flash/pro3.webp"
             alt="Interventions nuisibles - locaux professionnels"
             width={1200}
             height={900}
@@ -140,7 +140,7 @@ export default function ProfessionnelsPage() {
         title="Interventions ponctuelles et contrats de suivi"
         image={
           <Image
-            src="/images/flash/action-machine.jpg"
+            src="/images/flash/action-machine (1).webp"
             alt="Sanitation et suivi - matériel professionnel"
             width={1200}
             height={900}

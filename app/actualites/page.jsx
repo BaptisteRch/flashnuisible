@@ -84,7 +84,7 @@ export default function ActualitesPage() {
                 <div className="aspect-[16/9] bg-black">
                   <img
                     className="h-full w-full object-cover"
-                    src="/images/flash/accueil3.JPG"
+                    src="/images/flash/accueil3.webp"
                     alt="Instagram Flash Nuisible"
                   />
                 </div>
@@ -147,7 +147,7 @@ export default function ActualitesPage() {
                 <div className="aspect-[16/9] bg-black">
                   <img
                     className="h-full w-full object-cover"
-                    src="/images/flash/concours2.png"
+                    src="/images/flash/concours2.webp"
                     alt="Jeu concours"
                   />
                 </div>
@@ -180,7 +180,7 @@ export default function ActualitesPage() {
                 <div className="mt-4 border-t border-black/10 pt-4">
                   <div>
                     <p className="text-sm font-extrabold text-black/85">
-                      Une fois sur la plateforme : :
+                      Une fois sur la plateforme :
                     </p>
                     <ol className="mt-2 list-decimal pl-5 text-sm text-black/70 space-y-1">
                       <li>
@@ -284,7 +284,7 @@ export default function ActualitesPage() {
                 <div className="aspect-[16/9] bg-black">
                   <img
                     className="h-full w-full object-cover"
-                    src="/images/flash/20262.png"
+                    src="/images/flash/20262.webp"
                     alt="Intervention terrain"
                   />
                 </div>

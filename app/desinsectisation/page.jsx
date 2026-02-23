@@ -78,7 +78,7 @@ export default function DesinsectisationPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/flash/desinsectisation.JPG"
+                src="/images/flash/desinsectisation.webp"
                 alt="Intervention de désinsectisation"
                 width={1200}
                 height={900}
@@ -95,7 +95,7 @@ export default function DesinsectisationPage() {
         title="Punaises de lit"
         image={
           <Image
-            src="/images/flash/punaise2.JPG"
+            src="/images/flash/punaise2.webp"
             alt="Diagnostic et protocole punaises de lit"
             width={1200}
             height={900}
@@ -140,7 +140,7 @@ export default function DesinsectisationPage() {
         title="Cafards / blattes"
         image={
           <Image
-            src="/images/flash/cafards.JPG"
+            src="/images/flash/cafards.webp"
             alt="Traitement cafards et blattes"
             width={1200}
             height={900}
@@ -187,7 +187,7 @@ export default function DesinsectisationPage() {
         title="Fourmis"
         image={
           <Image
-            src="/images/flash/fourmis.JPG"
+            src="/images/flash/fourmis.webp"
             alt="Traitement des fourmis"
             width={1200}
             height={900}
@@ -216,7 +216,7 @@ export default function DesinsectisationPage() {
         title="Moustiques"
         image={
           <Image
-            src="/images/flash/moustique.JPG"
+            src="/images/flash/moustique.webp"
             alt="Traitements moustiques en extérieur"
             width={1200}
             height={900}
@@ -247,7 +247,7 @@ export default function DesinsectisationPage() {
         title="Chenilles Processionnaires"
         image={
           <Image
-            src="/images/flash/chenilles2.JPG"
+            src="/images/flash/chenilles2.webp"
             alt="Traitements chenilles processionnaires en extérieur"
             width={1200}
             height={900}

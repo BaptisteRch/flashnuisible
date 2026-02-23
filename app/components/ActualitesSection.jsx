@@ -89,7 +89,7 @@ export default function ActualitesSection() {
                     <div className="aspect-[16/9] bg-black">
                       <img
                         className="h-full w-full object-cover"
-                        src="/images/flash/accueil3.JPG"
+                        src="/images/flash/accueil3.webp"
                         alt="Intervention terrain"
                       />
                     </div>
@@ -144,7 +144,7 @@ export default function ActualitesSection() {
                     <div className="aspect-[16/9] bg-black">
                       <img
                         className="h-full w-full object-cover"
-                        src="/images/flash/concours2.png"
+                        src="/images/flash/concours2.webp"
                         alt="Intervention terrain"
                       />
                     </div>

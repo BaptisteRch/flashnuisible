@@ -40,7 +40,7 @@ export default function PresentationPage() {
             <div className="grid gap-4">
               <div className="card overflow-hidden">
                 <Image
-                  src="/images/flash/accueil3.jpg"
+                  src="/images/flash/accueil3.webp"
                   alt="Flash Nuisible en intervention"
                   width={1400}
                   height={1000}

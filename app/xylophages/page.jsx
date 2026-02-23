@@ -77,7 +77,7 @@ export default function XylophagesPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/flash/action-shirt.jpg"
+                src="/images/flash/action-shirt.webp"
                 alt="Diagnostic et traitement du bois"
                 width={1200}
                 height={900}
@@ -94,7 +94,7 @@ export default function XylophagesPage() {
         title="Quels sont les signes d’une infestation xylophage ?"
         image={
           <Image
-            src="/images/flash/action-talk.jpg"
+            src="/images/flash/action-talk (1).webp"
             alt="Repérage des signes d'infestation xylophage"
             width={1200}
             height={900}
@@ -125,7 +125,7 @@ export default function XylophagesPage() {
         title="Une intervention sur mesure, après diagnostic sur place"
         image={
           <Image
-            src="/images/flash/camion1.JPG"
+            src="/images/flash/camion1.webp"
             alt="Intervention sur site - diagnostic du bois"
             width={1200}
             height={900}

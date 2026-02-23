@@ -25,7 +25,7 @@ export default function SiteHeader() {
           >
             <div className="relative h-12 w-12 md:h-14 md:w-14 flex-shrink-0 mb-2">
               <Image
-                src="/images/flash/logo.png"
+                src="/images/flash/logo.webp"
                 alt="Flash Nuisible"
                 fill
                 className="object-contain"
