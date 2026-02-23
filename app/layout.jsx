@@ -1,7 +1,7 @@
 // app/layout.jsx
 import "./globals.css";
 
-const SITE_URL = "https://flashnuisible.fr";
+const SITE_URL = "https://www.flashnuisible.com";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
