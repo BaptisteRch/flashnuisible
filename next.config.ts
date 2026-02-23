@@ -3,36 +3,30 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
-      // Redirect flashnuisible.com -> flashnuisible.fr
+      // Forcer www sur le .com (tant que le .fr n'est pas configuré)
       {
         source: "/:path*",
         has: [{ type: "host", value: "flashnuisible.com" }],
-        destination: "https://flashnuisible.fr/:path*",
-        permanent: true,
-      },
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.flashnuisible.com" }],
-        destination: "https://flashnuisible.fr/:path*",
+        destination: "https://www.flashnuisible.com/:path*",
         permanent: true,
       },
 
-      // Si tu veux forcer le sans-www (optionnel, mais conseillé si tu choisis sans www)
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.flashnuisible.fr" }],
-        destination: "https://flashnuisible.fr/:path*",
-        permanent: true,
-      },
+      // (Optionnel) si quelqu’un arrive sur www.flashnuisible.fr, renvoyer vers le .com
+      // utile seulement si le .fr pointe déjà quelque part, sinon tu peux l’enlever
+      // {
+      //   source: "/:path*",
+      //   has: [{ type: "host", value: "www.flashnuisible.fr" }],
+      //   destination: "https://www.flashnuisible.com/:path*",
+      //   permanent: true,
+      // },
     ];
   },
 
   async headers() {
     return [
-      // Empêcher l'indexation du domaine vercel.app
       {
         source: "/:path*",
-        has: [{ type: "host", value: "flashnuisible.vercel.app" }], // adapte au vrai domaine Vercel
+        has: [{ type: "host", value: "flashnuisible.vercel.app" }],
         headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
       },
     ];

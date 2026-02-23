@@ -1,5 +1,4 @@
 import Container from "./Container";
-import Link from "next/link";
 import { BRAND } from "./SiteHeader";
 
 export default function SiteFooter() {
