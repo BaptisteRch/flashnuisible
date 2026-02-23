@@ -78,7 +78,7 @@ export default function DesinsectisationPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/flash/action-machine.jpg"
+                src="/images/flash/desinsectisation.jpg"
                 alt="Intervention de désinsectisation"
                 width={1200}
                 height={900}
@@ -95,7 +95,7 @@ export default function DesinsectisationPage() {
         title="Punaises de lit"
         image={
           <Image
-            src="/images/flash/action-talk.jpg"
+            src="/images/flash/punaise2.jpg"
             alt="Diagnostic et protocole punaises de lit"
             width={1200}
             height={900}
@@ -140,7 +140,7 @@ export default function DesinsectisationPage() {
         title="Cafards / blattes"
         image={
           <Image
-            src="/images/flash/action-bw-rack.jpg"
+            src="/images/flash/cafards.jpg"
             alt="Traitement cafards et blattes"
             width={1200}
             height={900}
@@ -187,7 +187,7 @@ export default function DesinsectisationPage() {
         title="Fourmis"
         image={
           <Image
-            src="/images/flash/action-office.jpg"
+            src="/images/flash/fourmis.jpg"
             alt="Traitement des fourmis"
             width={1200}
             height={900}
@@ -216,7 +216,7 @@ export default function DesinsectisationPage() {
         title="Moustiques"
         image={
           <Image
-            src="/images/flash/truck-hood.jpg"
+            src="/images/flash/moustique.jpg"
             alt="Traitements moustiques en extérieur"
             width={1200}
             height={900}
@@ -239,6 +239,72 @@ export default function DesinsectisationPage() {
         <p className="mt-3 text-muted">
           L’objectif n’est pas de promettre une disparition totale, mais une{" "}
           <strong>réduction efficace et maîtrisée</strong> des nuisances.
+        </p>
+      </Split>
+
+      {/* Chenilles */}
+      <Split
+        title="Chenilles Processionnaires"
+        image={
+          <Image
+            src="/images/flash/chenilles2.jpg"
+            alt="Traitements chenilles processionnaires en extérieur"
+            width={1200}
+            height={900}
+            className="h-[280px] md:h-[360px] w-full object-cover"
+          />
+        }
+      >
+        <p className="text-muted">
+          Les <strong>chenilles processionnaires du pin et du chêne</strong>{" "}
+          sont des nuisibles particulièrement dangereux en raison de leurs{" "}
+          <strong>poils urticants</strong>. Elles peuvent provoquer des
+          irritations cutanées, des réactions allergiques, des troubles
+          respiratoires et représentent un risque sérieux pour les enfants et
+          les animaux domestiques.
+        </p>
+
+        <p className="text-muted mt-3">
+          Flash Nuisible intervient pour le{" "}
+          <strong>traitement des chenilles processionnaires</strong>, en
+          solution curative et préventive. Chaque intervention est adaptée au
+          cycle biologique de l’insecte afin de maximiser l’efficacité et
+          limiter la propagation des nids d’une saison à l’autre.
+        </p>
+
+        <p className="text-muted mt-3">Nos prestations comprennent : </p>
+
+        <ul className="mt-4 list-disc pl-5 text-muted space-y-2">
+          <li>
+            <strong>Identification</strong> des arbres infestés (pins, chênes)
+          </li>
+          <li>
+            <strong>Retrait sécurisé</strong> des nids en hauteur
+          </li>
+          <li>
+            <strong>Installation d’éco-pièges</strong> pour capturer les
+            chenilles lors de leur descente
+          </li>
+          <li>
+            <strong>Mise en place de solutions</strong> adaptées aux
+            particuliers, collectivités et professionnels
+          </li>
+        </ul>
+
+        <p className="mt-4 text-muted">
+          Une infestation non traitée peut fragiliser les arbres et contaminer
+          durablement un jardin, un camping, une école ou un espace vert. Un
+          traitement professionnel des chenilles processionnaires permet de
+          sécuriser les lieux et de réduire significativement les risques
+          sanitaires.
+        </p>
+
+        <p className="mt-3 text-muted">
+          Pour toute demande de{" "}
+          <strong>
+            diagnostic ou d’intervention contre les chenilles processionnaires
+          </strong>
+          , contactez Flash Nuisible.
         </p>
       </Split>
 

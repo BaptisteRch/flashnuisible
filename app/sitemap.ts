@@ -5,7 +5,6 @@ const SITE_URL = "https://flashnuisible.fr";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  // Mets ici les routes importantes (ajoute/retire selon ton site)
   const routes = [
     "",
     "/#contact",

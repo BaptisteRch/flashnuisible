@@ -12,32 +12,11 @@ function slugify(str) {
     .replace(/(^-|-$)/g, "");
 }
 
-// ------------------------------------------------------------
-// ✅ SOURCES CSV "communes" (fallback)
-// - On essaie data.gouv (souvent plus stable)
-// - Puis INSEE
-// ------------------------------------------------------------
-//
-// NOTE IMPORTANT:
-// Les URLs data.gouv changent parfois (UUID). Si celle-ci ne marche pas,
-// remplace-la par une ressource CSV officielle des communes (COG) sur data.gouv.
-// L'INSEE peut renvoyer 500 selon le moment.
-//
-// Tu peux aussi passer en mode fichier local (voir plus bas).
-//
 const SOURCES = [
-  // data.gouv (exemple – peut nécessiter update si le lien ne répond plus)
   "https://www.data.gouv.fr/fr/datasets/r/0e117f93-1d84-4fdb-a7b1-7f2b0d6b8c3b",
-  // INSEE (parfois 500)
   "https://www.insee.fr/fr/statistiques/fichier/8377162/communes2025.csv",
 ];
 
-// ------------------------------------------------------------
-// ✅ MODE LOCAL (optionnel)
-// Si tu veux éviter les soucis réseau : télécharge le CSV une fois,
-// mets-le ici : scripts/data/communes.csv
-// et passe USE_LOCAL_CSV à true.
-// ------------------------------------------------------------
 const USE_LOCAL_CSV = true;
 const LOCAL_CSV_PATH = path.join(
   process.cwd(),
@@ -76,12 +55,12 @@ function parseCsvSemicolon(csvText) {
 
   const headerLine = lines[0];
 
-  // ✅ Détecte le séparateur : on choisit celui qui apparaît le plus
+  // Détecte le séparateur : on choisit celui qui apparaît le plus
   const semiCount = (headerLine.match(/;/g) || []).length;
   const commaCount = (headerLine.match(/,/g) || []).length;
   const delimiter = commaCount > semiCount ? "," : ";";
 
-  // ✅ Parse CSV line (gère les champs entre guillemets)
+  // Parse CSV line (gère les champs entre guillemets)
   function splitCsvLine(line) {
     const out = [];
     let cur = "";
@@ -117,7 +96,7 @@ function parseCsvSemicolon(csvText) {
   const idxDep = headers.indexOf("DEP");
   const idxType = headers.indexOf("TYPECOM");
 
-  // ✅ Colonnes possibles pour le nom
+  // Colonnes possibles pour le nom
   const nameCandidates = ["LIBELLE", "NCCENR", "NCC"];
   const idxName = nameCandidates
     .map((k) => headers.indexOf(k))
@@ -172,7 +151,7 @@ async function main() {
 
   const rows = parseCsvSemicolon(csv);
 
-  // ✅ Toutes les communes de ces départements :
+  // Toutes les communes de ces départements :
   const DEPS_ALL = new Set(["42", "43", "69"]);
 
   // Mapping dept -> libellé joli
@@ -200,7 +179,7 @@ async function main() {
     });
   }
 
-  // ✅ Ain (01) — grandes villes / pôles
+  // Ain (01) — grandes villes / pôles
   const AIN_MAJOR = [
     "Bourg-en-Bresse",
     "Oyonnax",
@@ -220,7 +199,7 @@ async function main() {
     dep: "01",
   }));
 
-  // ✅ Auvergne-Rhône-Alpes — villes importantes (hors 42/43/69/01)
+  // Auvergne-Rhône-Alpes — villes importantes (hors 42/43/69/01)
   // (liste “safe” : grandes agglos / préfectures / villes connues)
   const AURA_MAJOR = [
     // Isère (38)

@@ -18,27 +18,36 @@ export default function SiteHeader() {
   return (
     <header className="header">
       <Container className="flex items-center justify-between py-4">
-        <Link
-          href="/"
-          className="flex items-center gap-3 hover:opacity-90 transition leading-none"
-        >
-          <div className="relative h-12 w-12 md:h-14 md:w-14 flex-shrink-0 mb-2">
-            <Image
-              src="/images/flash/logo.png"
-              alt="Flash Nuisible"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-
-          <div className="leading-tight">
-            <div className="font-extrabold tracking-tight">Flash Nuisible</div>
-            <div className="brand-subtitle">
-              Dératisation • Désinsectisation • Désinfection
+        <div className="flex items-center gap-3">
+          <Link
+            href="/"
+            className="flex items-center gap-3 hover:opacity-90 transition leading-none"
+          >
+            <div className="relative h-12 w-12 md:h-14 md:w-14 flex-shrink-0 mb-2">
+              <Image
+                src="/images/flash/logo.png"
+                alt="Flash Nuisible"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
+
+            <div className="leading-tight">
+              <div className="font-extrabold tracking-tight ">
+                Flash Nuisible
+              </div>
+            </div>
+          </Link>
+
+          <div className="brand-subtitle">
+            <Link href="/deratisation">Dératisation</Link>
+            {" · "}
+            <Link href="/desinsectisation">Désinsectisation</Link>
+            {" · "}
+            <Link href="/">Désinfection</Link>
           </div>
-        </Link>
+        </div>
 
         <div className="flex items-center gap-2">
           <a href={BRAND.phoneHref} className="btn btn-primary">

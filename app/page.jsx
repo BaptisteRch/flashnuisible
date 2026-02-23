@@ -9,6 +9,7 @@ import FieldGallery from "./components/FieldGallery";
 import SiteHeader, { BRAND } from "./components/SiteHeader";
 import Collaborations from "./components/Collaborations";
 import ReviewsCarousel from "./components/ReviewsCarousel";
+import ActualitesSection from "./components/ActualitesSection";
 
 export default function Home() {
   return (
@@ -64,7 +65,7 @@ export default function Home() {
               className="group relative card overflow-hidden cursor-pointer"
             >
               <Image
-                src="/images/flash/truck-basilique-wide.jpg"
+                src="/images/flash/accueil3.jpg"
                 alt="Camion Flash Nuisible en intervention"
                 width={1400}
                 height={1000}
@@ -86,9 +87,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section id="services">
         <ServiceCards />
       </section>
+      <ActualitesSection />
       <FieldGallery />
       <Collaborations />
       <ReviewsCarousel reviewUrl={BRAND.reviewUrl} />

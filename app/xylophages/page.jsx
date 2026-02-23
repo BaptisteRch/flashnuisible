@@ -77,7 +77,7 @@ export default function XylophagesPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/flash/action-office.jpg"
+                src="/images/flash/action-shirt.jpg"
                 alt="Diagnostic et traitement du bois"
                 width={1200}
                 height={900}
@@ -125,7 +125,7 @@ export default function XylophagesPage() {
         title="Une intervention sur mesure, après diagnostic sur place"
         image={
           <Image
-            src="/images/flash/truck-hood.jpg"
+            src="/images/flash/camion1.jpg"
             alt="Intervention sur site - diagnostic du bois"
             width={1200}
             height={900}
