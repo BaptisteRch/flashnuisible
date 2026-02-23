@@ -125,7 +125,7 @@ export default function XylophagesPage() {
         title="Une intervention sur mesure, après diagnostic sur place"
         image={
           <Image
-            src="/images/flash/camion1.jpg"
+            src="/images/flash/camion1.JPG"
             alt="Intervention sur site - diagnostic du bois"
             width={1200}
             height={900}

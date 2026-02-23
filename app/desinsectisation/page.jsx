@@ -78,7 +78,7 @@ export default function DesinsectisationPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/flash/desinsectisation.jpg"
+                src="/images/flash/desinsectisation.JPG"
                 alt="Intervention de désinsectisation"
                 width={1200}
                 height={900}
@@ -95,7 +95,7 @@ export default function DesinsectisationPage() {
         title="Punaises de lit"
         image={
           <Image
-            src="/images/flash/punaise2.jpg"
+            src="/images/flash/punaise2.JPG"
             alt="Diagnostic et protocole punaises de lit"
             width={1200}
             height={900}
@@ -140,7 +140,7 @@ export default function DesinsectisationPage() {
         title="Cafards / blattes"
         image={
           <Image
-            src="/images/flash/cafards.jpg"
+            src="/images/flash/cafards.JPG"
             alt="Traitement cafards et blattes"
             width={1200}
             height={900}
@@ -187,7 +187,7 @@ export default function DesinsectisationPage() {
         title="Fourmis"
         image={
           <Image
-            src="/images/flash/fourmis.jpg"
+            src="/images/flash/fourmis.JPG"
             alt="Traitement des fourmis"
             width={1200}
             height={900}
@@ -216,7 +216,7 @@ export default function DesinsectisationPage() {
         title="Moustiques"
         image={
           <Image
-            src="/images/flash/moustique.jpg"
+            src="/images/flash/moustique.JPG"
             alt="Traitements moustiques en extérieur"
             width={1200}
             height={900}
@@ -247,7 +247,7 @@ export default function DesinsectisationPage() {
         title="Chenilles Processionnaires"
         image={
           <Image
-            src="/images/flash/chenilles2.jpg"
+            src="/images/flash/chenilles2.JPG"
             alt="Traitements chenilles processionnaires en extérieur"
             width={1200}
             height={900}

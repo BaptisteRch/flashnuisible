@@ -79,7 +79,7 @@ export default function DeratisationPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/flash/derat.jpg"
+                src="/images/flash/derat.JPG"
                 alt="Traitement de dératisation - matériel professionnel"
                 width={1200}
                 height={900}
@@ -153,7 +153,7 @@ export default function DeratisationPage() {
         title="Intervention rapide et tarifs clairs"
         image={
           <Image
-            src="/images/flash/boites.jpg"
+            src="/images/flash/boites.JPG"
             alt="Flash Nuisible - intervention rapide"
             width={1200}
             height={900}

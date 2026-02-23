@@ -65,7 +65,7 @@ export default function Home() {
               className="group relative card overflow-hidden cursor-pointer"
             >
               <Image
-                src="/images/flash/accueil3.jpg"
+                src="/images/flash/accueil3.JPG"
                 alt="Camion Flash Nuisible en intervention"
                 width={1400}
                 height={1000}

@@ -3,15 +3,15 @@ import Image from "next/image";
 export default function FieldGallery() {
   const photos = [
     {
-      src: "/images/flash/camion_flou.jpg",
+      src: "/images/flash/camion_flou.JPG",
       alt: "Intervention technique Flash Nuisible",
     },
     {
-      src: "/images/flash/flach2.jpg",
+      src: "/images/flash/flach2.JPG",
       alt: "Conseil et échange avec un client",
     },
     {
-      src: "/images/flash/seringue.jpg",
+      src: "/images/flash/seringue.JPG",
       alt: "Logo Flash Nuisible sur le camion",
     },
   ];

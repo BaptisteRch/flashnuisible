@@ -102,7 +102,7 @@ export default function ProfessionnelsPage() {
         title="Problématiques traitées chez les professionnels"
         image={
           <Image
-            src="/images/flash/pro3.jpg"
+            src="/images/flash/pro3.JPG"
             alt="Interventions nuisibles - locaux professionnels"
             width={1200}
             height={900}

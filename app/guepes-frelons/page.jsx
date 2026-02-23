@@ -80,7 +80,7 @@ export default function GuepesFrelonsPage() {
 
             <div className="card overflow-hidden">
               <Image
-                src="/images/flash/guepe.jpg"
+                src="/images/flash/guepe.JPG  "
                 alt="Intervention guêpes et frelons"
                 width={1400}
                 height={1000}
@@ -97,7 +97,7 @@ export default function GuepesFrelonsPage() {
         title="Où se trouvent les nids de guêpes et de frelons ?"
         image={
           <Image
-            src="/images/flash/nid_guepes.jpg"
+            src="/images/flash/nid_guepes.JPG"
             alt="Nid guêpes frelons - intervention en zone difficile"
             width={1200}
             height={900}
@@ -134,7 +134,7 @@ export default function GuepesFrelonsPage() {
         title="Déroulement d’une intervention professionnelle"
         image={
           <Image
-            src="/images/flash/inter_guepes.jpg"
+            src="/images/flash/inter_guepes.JPG"
             alt="Matériel professionnel guêpes frelons"
             width={1200}
             height={900}
