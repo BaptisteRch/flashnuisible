@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const SITE_URL = "https://flashnuisible.com";
+const SITE_URL = "https://www.flashnuisible.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
