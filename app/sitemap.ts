@@ -7,7 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routes = [
     "",
-    "/#contact",
     "/fouines",
     "/deratisation",
     "/desinsectisation",
@@ -23,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/urgences/deratisation",
     "/urgences/guepes-frelons",
     "/xylophages",
+    "/actualites",
   ];
 
   return routes.map((path) => ({
