@@ -1,5 +1,5 @@
 // app/actualites/page.jsx
-import SiteHeader from "../components/SiteHeader";
+import SiteHeader, { BRAND } from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import ContactSection from "../components/ContactSection";
 
@@ -147,71 +147,57 @@ export default function ActualitesPage() {
                 <div className="aspect-[16/9] bg-black">
                   <img
                     className="h-full w-full object-cover"
-                    src="/images/flash/concours2.webp"
-                    alt="Jeu concours"
+                    src="/images/flash/saison_chenilles.webp"
+                    alt="Saison chenilles processionnaires"
                   />
                 </div>
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/35" />
-                <div className="absolute top-3 right-3 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 px-3 py-1 text-xs font-extrabold text-black">
+                {/* <div className="absolute top-3 right-3 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 px-3 py-1 text-xs font-extrabold text-black">
                   LOT 200 €
-                </div>
+                </div> */}
               </div>
 
               <div className="p-4 md:p-6">
                 <div className="flex items-center justify-between gap-3">
                   <span className="text-xs font-semibold text-black/55">
-                    Jeu concours • Février 2026
+                    Terrain • Interventions • Février 2026
                   </span>
                   <span className="rounded-full border border-orange-500/25 bg-orange-500/10 px-2.5 py-1 text-[11px] font-extrabold text-black/70">
-                    Instagram
+                    Pro & particuliers
                   </span>
                 </div>
 
                 <h3 className="mt-3 text-lg font-extrabold tracking-tight text-black">
-                  Jeu concours Flash Nuisible : participez sur Instagram
+                  Saison chenilles processionnaires lancée.
                 </h3>
 
-                <p className="mt-2 text-black/70 leading-relaxed">
-                  Le jeu concours actuellement en ligne permet de remporter un
-                  lot d’une valeur de 200 €. Pour participer, il est nécessaire
-                  de se rendre directement sur Instagram
+                <p className="mt-5 text-black/70 leading-relaxed">
+                  ☀️ Soleil. Pins. Perche déployée.
                 </p>
 
-                <div className="mt-4 border-t border-black/10 pt-4">
-                  <div>
-                    <p className="text-sm font-extrabold text-black/85">
-                      Une fois sur la plateforme :
-                    </p>
-                    <ol className="mt-2 list-decimal pl-5 text-sm text-black/70 space-y-1">
-                      <li>
-                        S’abonner au compte{" "}
-                        <a
-                          href="https://www.instagram.com/flashnuisible/"
-                          className="!text-orange-500 font-bold"
-                          target="_blank"
-                        >
-                          @flashnuisible
-                        </a>{" "}
-                      </li>
-                      <li>Liker la publication du jeu concours </li>
-                      <li>Identifier deux personnes en commentaire </li>
-                      <li>Partager la publication en story (bonus)</li>
-                    </ol>
-                  </div>
-                  <a
-                    className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 px-4 py-2 text-sm font-extrabold text-black hover:brightness-105 transition mt-4"
-                    href="https://www.instagram.com/flashnuisible/p/DU5D5i_DjSq/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Voir le jeu concours ↗
+                <p className="mt-5 text-black/70 leading-relaxed">
+                  C’est le moment d’agir. Pas dans un mois. Maintenant.
+                </p>
+
+                <p className="mt-5 text-black/70 leading-relaxed">
+                  Intervention propre, sécurisée, efficace. On fait le
+                  nécessaire pendant que d’autres attendent.
+                </p>
+
+                <p className="mt-5 text-black/70 leading-relaxed">
+                  Flash Nuisible ⚡
+                </p>
+                <p className="text-black/70 leading-relaxed">
+                  La réactivité, même dans les arbres.
+                </p>
+
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <a className="mt-5 btn btn-primary" href={BRAND.phoneHref}>
+                    ⚡ Appeler {BRAND.phoneDisplay}
                   </a>
-                  <p className="text-sm p-1 mt-3 !text-gray-500">
-                    Les résultats sont annoncés exclusivement sur Instagram.
-                    Aucune participation n’est possible depuis le site internet.
-                    Il est impératif de passer par le compte Instagram
-                    officiel.{" "}
-                  </p>
+                  <a className="btn btn-ghost" href="#contact">
+                    Demander un devis
+                  </a>
                 </div>
               </div>
             </article>

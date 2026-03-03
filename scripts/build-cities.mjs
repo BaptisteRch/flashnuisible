@@ -55,7 +55,7 @@ function parseCsvSemicolon(csvText) {
 
   const headerLine = lines[0];
 
-  // Détecte le séparateur : on choisit celui qui apparaît le plus
+  // Détecte le séparateur
   const semiCount = (headerLine.match(/;/g) || []).length;
   const commaCount = (headerLine.match(/,/g) || []).length;
   const delimiter = commaCount > semiCount ? "," : ";";
