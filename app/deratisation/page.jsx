@@ -207,6 +207,34 @@ export default function DeratisationPage() {
                 .
               </p>
             </div>
+            <div className="text-xs">
+              <h2 className="font-semibold mb-3">
+                Intervention dératisation dans la région
+              </h2>
+
+              <ul className=" md:grid-cols-1 gap-3">
+                <li>
+                  <a href="/deratisation/saint-etienne">Saint-Étienne</a>
+                </li>
+                <li>
+                  <a href="/deratisation/roanne">Roanne</a>
+                </li>
+                <li>
+                  <a href="/deratisation/montbrison">Montbrison</a>
+                </li>
+                <li>
+                  <a href="/deratisation/andrezieux-boutheon">
+                    Andrézieux-Bouthéon
+                  </a>
+                </li>
+                <li>
+                  <a href="/deratisation/saint-chamond">Saint-Chamond</a>
+                </li>
+                <li>
+                  <a href="/deratisation/Lyon">Lyon</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

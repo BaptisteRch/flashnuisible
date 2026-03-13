@@ -271,6 +271,34 @@ export default function XylophagesPage() {
                 travaux lourds et coûteux.
               </p>
             </div>
+            <div className="text-xs">
+              <h2 className="font-semibold mb-3">
+                Intervention contre les xylophages dans la région
+              </h2>
+
+              <ul className=" md:grid-cols-1 gap-3">
+                <li>
+                  <a href="/xylophages/saint-etienne">Saint-Étienne</a>
+                </li>
+                <li>
+                  <a href="/xylophages/roanne">Roanne</a>
+                </li>
+                <li>
+                  <a href="/xylophages/montbrison">Montbrison</a>
+                </li>
+                <li>
+                  <a href="/xylophages/andrezieux-boutheon">
+                    Andrézieux-Bouthéon
+                  </a>
+                </li>
+                <li>
+                  <a href="/xylophages/saint-chamond">Saint-Chamond</a>
+                </li>
+                <li>
+                  <a href="/xylophages/Lyon">Lyon</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

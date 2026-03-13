@@ -227,6 +227,33 @@ export default function FouinesPage() {
                 de proposer une solution adaptée, légale et durable.
               </p>
             </div>
+
+            <div className="text-xs">
+              <h2 className="font-semibold mb-3">
+                Intervention contre les fouines dans la région
+              </h2>
+
+              <ul className=" md:grid-cols-1 gap-3">
+                <li>
+                  <a href="/fouines/saint-etienne">Saint-Étienne</a>
+                </li>
+                <li>
+                  <a href="/fouines/roanne">Roanne</a>
+                </li>
+                <li>
+                  <a href="/fouines/montbrison">Montbrison</a>
+                </li>
+                <li>
+                  <a href="/fouines/andrezieux-boutheon">Andrézieux-Bouthéon</a>
+                </li>
+                <li>
+                  <a href="/fouines/saint-chamond">Saint-Chamond</a>
+                </li>
+                <li>
+                  <a href="/fouines/Lyon">Lyon</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

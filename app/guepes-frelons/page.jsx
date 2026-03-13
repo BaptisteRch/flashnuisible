@@ -248,6 +248,34 @@ export default function GuepesFrelonsPage() {
                 </strong>
               </p>
             </div>
+            <div className="text-xs">
+              <h2 className="font-semibold mb-3">
+                Intervention contre les guêpes et frelons dans la région
+              </h2>
+
+              <ul className=" md:grid-cols-1 gap-3">
+                <li>
+                  <a href="/guepes-frelons/saint-etienne">Saint-Étienne</a>
+                </li>
+                <li>
+                  <a href="/guepes-frelons/roanne">Roanne</a>
+                </li>
+                <li>
+                  <a href="/guepes-frelons/montbrison">Montbrison</a>
+                </li>
+                <li>
+                  <a href="/guepes-frelons/andrezieux-boutheon">
+                    Andrézieux-Bouthéon
+                  </a>
+                </li>
+                <li>
+                  <a href="/guepes-frelons/saint-chamond">Saint-Chamond</a>
+                </li>
+                <li>
+                  <a href="/guepes-frelons/Lyon">Lyon</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
