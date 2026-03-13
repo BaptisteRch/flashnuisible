@@ -36,6 +36,7 @@ export default async function FourmisVillePage({ params }) {
 
   const VILLE = city.name;
   const AREA = city.area || "Auvergne-Rhône-Alpes";
+  const SITE_URL = "https://www.flashnuisible.com";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -43,18 +44,23 @@ export default async function FourmisVillePage({ params }) {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Accueil", item: "/" },
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Accueil",
+            item: `${SITE_URL}/`,
+          },
           {
             "@type": "ListItem",
             position: 2,
-            name: "Désinsectisation",
-            item: "/desinsectisation",
+            name: "Fourmis",
+            item: `${SITE_URL}/fourmis`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: `Fourmis à ${VILLE}`,
-            item: `/fourmis/${city.slug}`,
+            item: `${SITE_URL}/fourmis/${city.slug}`,
           },
         ],
       },
@@ -64,49 +70,46 @@ export default async function FourmisVillePage({ params }) {
         telephone: "+33770353341",
         email: "contact@flashnuisible.fr",
         areaServed: AREA,
-        url: "/",
-        image: "/images/og.jpg",
+        url: `${SITE_URL}/`,
+        image: `${SITE_URL}/images/og.jpg`,
       },
       {
         "@type": "Service",
         name: `Traitement des fourmis à ${VILLE}`,
         serviceType: "Traitement des fourmis",
-        provider: { "@type": "LocalBusiness", name: "Flash Nuisible" },
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Flash Nuisible",
+          url: `${SITE_URL}/`,
+        },
         areaServed: VILLE,
+        url: `${SITE_URL}/fourmis/${city.slug}`,
       },
       {
         "@type": "FAQPage",
         mainEntity: [
           {
             "@type": "Question",
-            name: `Intervenez-vous rapidement pour un traitement de fourmis à ${VILLE} ?`,
+            name: `Pourquoi les fourmis reviennent-elles à ${VILLE} ?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Oui. Un diagnostic et un devis gratuits sont réalisés par téléphone, puis l’intervention est généralement possible sous 48h selon l’urgence, avec disponibilité 7j/7 et 24h/24.",
+              text: "Les fourmis reviennent souvent si la colonie ou la reine n’a pas été traitée à la source.",
             },
           },
           {
             "@type": "Question",
-            name: "Pourquoi les produits grand public ne suffisent pas ?",
+            name: "Le traitement est-il durable ?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Ils agissent souvent uniquement sur les fourmis visibles. Sans traitement ciblant la colonie (la fourmilière), l’infestation revient rapidement, parfois de façon plus importante.",
+              text: "Oui, un traitement adapté permet de réduire durablement la présence de fourmis selon la configuration des lieux.",
             },
           },
           {
             "@type": "Question",
-            name: "Traitez-vous aussi les fourmis charpentières ?",
+            name: "Faites-vous un devis ?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Oui. Flash Nuisible intervient sur tous types de fourmis, y compris les fourmis charpentières, avec une intervention adaptée aux zones de passage et à la localisation de la colonie.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Le traitement se fait-il en intérieur ou en extérieur ?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Selon la situation, l’intervention peut être réalisée en intérieur, en extérieur, ou les deux, afin de traiter la source de l’infestation et limiter les récidives.",
+              text: "Oui, le devis est gratuit par téléphone.",
             },
           },
         ],

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import SiteHeader from "../../components/SiteHeader";
 import SiteFooter from "../../components/SiteFooter";
 import ContactSection from "../../components/ContactSection";
+import SeoJsonLd from "../../components/SeoJsonLd"; // ✅ AJOUT
 
 import { getCity, getFeaturedCities } from "../../lib/cities";
 
@@ -33,11 +34,91 @@ export default async function CafardsVillePage({ params }) {
 
   const VILLE = city.name;
   const AREA = city.area || "Auvergne-Rhône-Alpes";
+  const SITE_URL = "https://www.flashnuisible.com";
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Accueil",
+            item: `${SITE_URL}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Cafards blattes",
+            item: `${SITE_URL}/cafards-blattes`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: `Cafards blattes à ${VILLE}`,
+            item: `${SITE_URL}/cafards-blattes/${city.slug}`,
+          },
+        ],
+      },
+      {
+        "@type": "LocalBusiness",
+        name: "Flash Nuisible",
+        telephone: "+33770353341",
+        email: "contact@flashnuisible.fr",
+        areaServed: AREA,
+        url: `${SITE_URL}/`,
+        image: `${SITE_URL}/images/og.jpg`,
+      },
+      {
+        "@type": "Service",
+        name: `Traitement cafards blattes à ${VILLE}`,
+        serviceType: "Traitement des cafards et blattes",
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Flash Nuisible",
+          url: `${SITE_URL}/`,
+        },
+        areaServed: VILLE,
+        url: `${SITE_URL}/cafards-blattes/${city.slug}`,
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: `Comment savoir si j’ai des cafards à ${VILLE} ?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "La présence de cafards peut se repérer par des insectes visibles, des traces, des odeurs inhabituelles ou des insectes actifs la nuit.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: `Intervenez-vous rapidement à ${VILLE} ?`,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Oui, Flash Nuisible intervient rapidement selon l’urgence, avec devis gratuit par téléphone.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Un seul passage suffit-il ?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Selon le niveau d’infestation, un protocole en plusieurs passages peut être nécessaire pour un résultat durable.",
+            },
+          },
+        ],
+      },
+    ],
+  };
 
   return (
     <main className="page">
+      <SeoJsonLd json={jsonLd} /> {/* ✅ AJOUT */}
       <SiteHeader />
-
       <section className="section">
         <div className="mx-auto max-w-7xl px-6 space-y-12">
           {/* HERO */}
@@ -259,14 +340,12 @@ export default async function CafardsVillePage({ params }) {
           </div>
         </div>
       </section>
-
       {/* CONTACT */}
       <section className="section on-dark" id="contact">
         <div className="mx-auto max-w-7xl px-6">
           <ContactSection />
         </div>
       </section>
-
       <SiteFooter />
     </main>
   );

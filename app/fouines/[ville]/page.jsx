@@ -35,6 +35,7 @@ export default async function FouinesVillePage({ params }) {
   if (!city) notFound();
 
   const VILLE = city.name;
+  const SITE_URL = "https://www.flashnuisible.com";
   const AREA = city.area || "Auvergne-Rhône-Alpes";
 
   // ✅ AJOUT : JSON-LD (invisible, pour Google)
@@ -44,18 +45,23 @@ export default async function FouinesVillePage({ params }) {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Accueil", item: "/" },
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Accueil",
+            item: `${SITE_URL}/`,
+          },
           {
             "@type": "ListItem",
             position: 2,
             name: "Fouines",
-            item: "/fouines",
+            item: `${SITE_URL}/fouines`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: `Fouines à ${VILLE}`,
-            item: `/fouines/${city.slug}`,
+            item: `${SITE_URL}/fouines/${city.slug}`,
           },
         ],
       },
@@ -65,15 +71,20 @@ export default async function FouinesVillePage({ params }) {
         telephone: "+33770353341",
         email: "contact@flashnuisible.fr",
         areaServed: AREA,
-        url: "/",
-        image: "/images/og.jpg",
+        url: `${SITE_URL}/`,
+        image: `${SITE_URL}/images/og.jpg`,
       },
       {
         "@type": "Service",
         name: `Protection contre les fouines à ${VILLE}`,
         serviceType: "Protection contre les fouines",
-        provider: { "@type": "LocalBusiness", name: "Flash Nuisible" },
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Flash Nuisible",
+          url: `${SITE_URL}/`,
+        },
         areaServed: VILLE,
+        url: `${SITE_URL}/fouines/${city.slug}`,
       },
       {
         "@type": "FAQPage",
@@ -99,7 +110,7 @@ export default async function FouinesVillePage({ params }) {
             name: "Pourquoi deux passages sont-ils nécessaires ?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Le premier passage permet d’éloigner l’animal avec un répulsif adapté. Le second passage installe des protections physiques (barrières, rebouchage des accès) pour éviter la récidive.",
+              text: "Le premier passage permet d’éloigner l’animal avec un répulsif adapté. Le second passage installe des protections physiques pour éviter la récidive.",
             },
           },
           {
@@ -107,7 +118,7 @@ export default async function FouinesVillePage({ params }) {
             name: "Le répulsif suffit-il pour empêcher le retour ?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Non. Sans protection physique des points d’accès (tout en conservant une aération fonctionnelle), la fouine peut revenir. La sécurisation est la clé d’un résultat durable.",
+              text: "Non. Sans protection physique des points d’accès, la fouine peut revenir. La sécurisation est essentielle pour un résultat durable.",
             },
           },
         ],

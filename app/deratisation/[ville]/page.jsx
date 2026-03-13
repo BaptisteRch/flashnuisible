@@ -35,6 +35,7 @@ export default async function DeratisationVillePage({ params }) {
   if (!city) notFound();
 
   const VILLE = city.name;
+  const SITE_URL = "https://www.flashnuisible.com";
   const AREA = city.area || "Auvergne-Rhône-Alpes";
   const jsonLd = {
     "@context": "https://schema.org",
@@ -42,18 +43,23 @@ export default async function DeratisationVillePage({ params }) {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Accueil", item: "/" },
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Accueil",
+            item: `${SITE_URL}/`,
+          },
           {
             "@type": "ListItem",
             position: 2,
             name: "Dératisation",
-            item: "/deratisation",
+            item: `${SITE_URL}/deratisation`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: `Dératisation à ${VILLE}`,
-            item: `/deratisation/${city.slug}`,
+            item: `${SITE_URL}/deratisation/${city.slug}`,
           },
         ],
       },
@@ -63,15 +69,20 @@ export default async function DeratisationVillePage({ params }) {
         telephone: "+33770353341",
         email: "contact@flashnuisible.fr",
         areaServed: AREA,
-        url: "/",
-        image: "/images/og.jpg",
+        url: `${SITE_URL}/`,
+        image: `${SITE_URL}/images/og.jpg`,
       },
       {
         "@type": "Service",
         name: `Dératisation à ${VILLE}`,
         serviceType: "Dératisation",
-        provider: { "@type": "LocalBusiness", name: "Flash Nuisible" },
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Flash Nuisible",
+          url: `${SITE_URL}/`,
+        },
         areaServed: VILLE,
+        url: `${SITE_URL}/deratisation/${city.slug}`,
       },
       {
         "@type": "FAQPage",

@@ -34,6 +34,7 @@ export default async function MouchesVillePage({ params }) {
 
   const VILLE = city.name;
   const AREA = city.area || "Auvergne-Rhône-Alpes";
+  const SITE_URL = "https://www.flashnuisible.com";
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -44,19 +45,19 @@ export default async function MouchesVillePage({ params }) {
             "@type": "ListItem",
             position: 1,
             name: "Accueil",
-            item: "https://www.flashnuisible.com/",
+            item: `${SITE_URL}/`,
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Mouches",
-            item: "https://www.flashnuisible.com/mouches",
+            item: `${SITE_URL}/mouches`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: `Mouches à ${VILLE}`,
-            item: `https://www.flashnuisible.com/mouches/${city.slug}`,
+            item: `${SITE_URL}/mouches/${city.slug}`,
           },
         ],
       },
@@ -64,41 +65,48 @@ export default async function MouchesVillePage({ params }) {
         "@type": "LocalBusiness",
         name: "Flash Nuisible",
         telephone: "+33770353341",
-        url: "https://www.flashnuisible.com",
+        email: "contact@flashnuisible.fr",
         areaServed: AREA,
+        url: `${SITE_URL}/`,
+        image: `${SITE_URL}/images/og.jpg`,
       },
       {
         "@type": "Service",
         name: `Traitement des mouches à ${VILLE}`,
-        provider: { "@type": "LocalBusiness", name: "Flash Nuisible" },
+        serviceType: "Traitement des mouches",
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Flash Nuisible",
+          url: `${SITE_URL}/`,
+        },
         areaServed: VILLE,
-        serviceType: "Désinsectisation",
+        url: `${SITE_URL}/mouches/${city.slug}`,
       },
       {
         "@type": "FAQPage",
         mainEntity: [
           {
             "@type": "Question",
-            name: `Intervenez-vous rapidement pour un traitement des mouches à ${VILLE} ?`,
+            name: `Pourquoi ai-je beaucoup de mouches à ${VILLE} ?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Oui. Flash Nuisible intervient généralement sous 48h, avec une disponibilité 7j/7 et 24h/24 selon l’urgence.",
+              text: "Une forte présence de mouches peut être liée à des sources de nourriture, d’humidité ou de reproduction à proximité.",
             },
           },
           {
             "@type": "Question",
-            name: `Comment se déroule un traitement des mouches à ${VILLE} ?`,
+            name: "Le traitement est-il adapté aux habitations ?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Un diagnostic permet d’identifier l’origine (accès, zones attractives, humidité, déchets), puis un traitement ciblé est mis en place, complété par des actions de prévention pour limiter les récidives.",
+              text: "Oui, le traitement est adapté à la situation et au type de lieu concerné.",
             },
           },
           {
             "@type": "Question",
-            name: `Pourquoi les mouches reviennent-elles malgré les solutions grand public ?`,
+            name: "Proposez-vous un diagnostic ?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Parce que le problème vient souvent d’une cause précise (points d’entrée, zones attractives, humidité). Agir à la source, en plus du traitement, est essentiel pour un résultat durable.",
+              text: "Oui, un premier diagnostic et un devis peuvent être réalisés par téléphone.",
             },
           },
         ],

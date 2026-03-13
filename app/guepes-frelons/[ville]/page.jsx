@@ -36,6 +36,7 @@ export default async function GuepesFrelonsVillePage({ params }) {
 
   const VILLE = city.name;
   const AREA = city.area || "Auvergne-Rhône-Alpes";
+  const SITE_URL = "https://www.flashnuisible.com";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -43,18 +44,23 @@ export default async function GuepesFrelonsVillePage({ params }) {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Accueil", item: "/" },
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Accueil",
+            item: `${SITE_URL}/`,
+          },
           {
             "@type": "ListItem",
             position: 2,
-            name: "Guêpes & Frelons",
-            item: "/guepes-frelons",
+            name: "Guêpes frelons",
+            item: `${SITE_URL}/guepes-frelons`,
           },
           {
             "@type": "ListItem",
             position: 3,
-            name: `Guêpes et frelons à ${VILLE}`,
-            item: `/guepes-frelons/${city.slug}`,
+            name: `Guêpes frelons à ${VILLE}`,
+            item: `${SITE_URL}/guepes-frelons/${city.slug}`,
           },
         ],
       },
@@ -64,57 +70,46 @@ export default async function GuepesFrelonsVillePage({ params }) {
         telephone: "+33770353341",
         email: "contact@flashnuisible.fr",
         areaServed: AREA,
-        url: "/",
-        image: "/images/og.jpg",
+        url: `${SITE_URL}/`,
+        image: `${SITE_URL}/images/og.jpg`,
       },
       {
         "@type": "Service",
         name: `Destruction de nid de guêpes et frelons à ${VILLE}`,
-        serviceType: "Destruction de nids de guêpes et frelons",
-        provider: { "@type": "LocalBusiness", name: "Flash Nuisible" },
+        serviceType: "Destruction de nid de guêpes et frelons",
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Flash Nuisible",
+          url: `${SITE_URL}/`,
+        },
         areaServed: VILLE,
+        url: `${SITE_URL}/guepes-frelons/${city.slug}`,
       },
       {
         "@type": "FAQPage",
         mainEntity: [
           {
             "@type": "Question",
-            name: `Intervenez-vous rapidement à ${VILLE} pour un nid de guêpes ou de frelons ?`,
+            name: `Intervenez-vous rapidement à ${VILLE} pour un nid ?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Oui. Un diagnostic et un devis sont réalisés par téléphone, et l’intervention est généralement possible sous 48h selon l’urgence, avec disponibilité 7j/7 et 24h/24.",
+              text: "Oui, une intervention rapide est possible selon l’urgence et l’accessibilité du nid.",
             },
           },
           {
             "@type": "Question",
-            name: "Faut-il que le nid soit visible pour intervenir ?",
+            name: "Peut-on enlever un nid soi-même ?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Idéalement, oui. À défaut, un point d’entrée identifié avec des allées et venues régulières de guêpes ou de frelons permet d’organiser une intervention adaptée.",
+              text: "Il est déconseillé d’intervenir soi-même sur un nid de guêpes ou de frelons en raison du risque de piqûres et d’agressivité.",
             },
           },
           {
             "@type": "Question",
-            name: "Pourquoi ne faut-il pas détruire un nid soi-même ?",
+            name: "Le devis est-il gratuit ?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Une tentative par soi-même est fortement déconseillée : elle augmente le risque de piqûres multiples et peut aggraver la situation. Une intervention professionnelle permet de sécuriser les occupants.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Jusqu’à quelle hauteur pouvez-vous intervenir ?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Flash Nuisible peut intervenir sur des nids situés jusqu’à 45 mètres de hauteur, notamment en toiture ou dans des zones difficiles d’accès.",
-            },
-          },
-          {
-            "@type": "Question",
-            name: "Y a-t-il une garantie après intervention ?",
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: "Oui. Les interventions bénéficient d’une garantie jusqu’à la fin de l’année en cours, selon les conditions définies lors du devis.",
+              text: "Oui, Flash Nuisible réalise un devis gratuit par téléphone.",
             },
           },
         ],

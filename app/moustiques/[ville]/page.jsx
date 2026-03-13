@@ -34,6 +34,7 @@ export default async function MoustiquesVillePage({ params }) {
 
   const VILLE = city.name;
   const AREA = city.area || "Auvergne-Rhône-Alpes";
+  const SITE_URL = "https://www.flashnuisible.com";
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -44,19 +45,19 @@ export default async function MoustiquesVillePage({ params }) {
             "@type": "ListItem",
             position: 1,
             name: "Accueil",
-            item: "https://www.flashnuisible.com/",
+            item: `${SITE_URL}/`,
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Moustiques",
-            item: "https://www.flashnuisible.com/moustiques",
+            item: `${SITE_URL}/moustiques`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: `Moustiques à ${VILLE}`,
-            item: `https://www.flashnuisible.com/moustiques/${city.slug}`,
+            item: `${SITE_URL}/moustiques/${city.slug}`,
           },
         ],
       },
@@ -64,41 +65,48 @@ export default async function MoustiquesVillePage({ params }) {
         "@type": "LocalBusiness",
         name: "Flash Nuisible",
         telephone: "+33770353341",
-        url: "https://www.flashnuisible.com",
+        email: "contact@flashnuisible.fr",
         areaServed: AREA,
+        url: `${SITE_URL}/`,
+        image: `${SITE_URL}/images/og.jpg`,
       },
       {
         "@type": "Service",
         name: `Traitement des moustiques à ${VILLE}`,
-        provider: { "@type": "LocalBusiness", name: "Flash Nuisible" },
+        serviceType: "Traitement des moustiques",
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Flash Nuisible",
+          url: `${SITE_URL}/`,
+        },
         areaServed: VILLE,
-        serviceType: "Désinsectisation",
+        url: `${SITE_URL}/moustiques/${city.slug}`,
       },
       {
         "@type": "FAQPage",
         mainEntity: [
           {
             "@type": "Question",
-            name: `Intervenez-vous rapidement pour un traitement des moustiques à ${VILLE} ?`,
+            name: `Pouvez-vous traiter les moustiques à ${VILLE} ?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Oui. Flash Nuisible intervient généralement sous 48h, avec une disponibilité 7j/7 et 24h/24, notamment en période estivale selon l’urgence.",
+              text: "Oui, Flash Nuisible propose des solutions adaptées pour limiter durablement la présence de moustiques.",
             },
           },
           {
             "@type": "Question",
-            name: "Un traitement anti-moustiques élimine-t-il tous les moustiques ?",
+            name: "Pourquoi les moustiques reviennent-ils ?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Non. L’objectif est une réduction efficace et maîtrisée des nuisances afin d’améliorer le confort de vie, sans promettre une disparition totale.",
+              text: "Les moustiques reviennent souvent en présence d’eau stagnante, d’humidité ou d’environnements favorables à leur reproduction.",
             },
           },
           {
             "@type": "Question",
-            name: `Où se fait l’intervention anti-moustiques à ${VILLE} ?`,
+            name: "Peut-on obtenir un devis rapidement ?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Les traitements moustiques sont réalisés exclusivement en extérieur : jardins, terrasses et abords des habitations, avec une approche curative et préventive selon les zones à risque.",
+              text: "Oui, le devis est gratuit et peut être préparé rapidement par téléphone.",
             },
           },
         ],

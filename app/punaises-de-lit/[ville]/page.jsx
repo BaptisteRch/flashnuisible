@@ -35,6 +35,7 @@ export default async function PunaisesVillePage({ params }) {
 
   const VILLE = city.name;
   const AREA = city.area || "Auvergne-Rhône-Alpes";
+  const SITE_URL = "https://www.flashnuisible.com";
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -45,19 +46,19 @@ export default async function PunaisesVillePage({ params }) {
             "@type": "ListItem",
             position: 1,
             name: "Accueil",
-            item: "https://www.flashnuisible.com/",
+            item: `${SITE_URL}/`,
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "Punaises de lit",
-            item: "https://www.flashnuisible.com/punaises-de-lit",
+            item: `${SITE_URL}/punaises-de-lit`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: `Punaises de lit à ${VILLE}`,
-            item: `https://www.flashnuisible.com/punaises-de-lit/${city.slug}`,
+            item: `${SITE_URL}/punaises-de-lit/${city.slug}`,
           },
         ],
       },
@@ -65,41 +66,48 @@ export default async function PunaisesVillePage({ params }) {
         "@type": "LocalBusiness",
         name: "Flash Nuisible",
         telephone: "+33770353341",
-        url: "https://www.flashnuisible.com",
+        email: "contact@flashnuisible.fr",
         areaServed: AREA,
+        url: `${SITE_URL}/`,
+        image: `${SITE_URL}/images/og.jpg`,
       },
       {
         "@type": "Service",
         name: `Traitement des punaises de lit à ${VILLE}`,
-        provider: { "@type": "LocalBusiness", name: "Flash Nuisible" },
+        serviceType: "Traitement des punaises de lit",
+        provider: {
+          "@type": "LocalBusiness",
+          name: "Flash Nuisible",
+          url: `${SITE_URL}/`,
+        },
         areaServed: VILLE,
-        serviceType: "Désinsectisation",
+        url: `${SITE_URL}/punaises-de-lit/${city.slug}`,
       },
       {
         "@type": "FAQPage",
         mainEntity: [
           {
             "@type": "Question",
-            name: `Intervenez-vous rapidement pour un traitement des punaises de lit à ${VILLE} ?`,
+            name: `Comment savoir si j’ai des punaises de lit à ${VILLE} ?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Oui. Un diagnostic et un devis gratuits par téléphone permettent d’intervenir rapidement, généralement sous 48h, selon l’urgence.",
+              text: "Les signes fréquents sont des piqûres, des traces sur la literie ou la présence d’insectes dans les zones de couchage.",
             },
           },
           {
             "@type": "Question",
-            name: "Combien de passages sont nécessaires pour traiter les punaises de lit ?",
+            name: "Faut-il agir vite ?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Deux passages sont réalisés, espacés de 15 jours, afin de traiter l’ensemble du cycle de vie des punaises de lit et limiter les risques de recontamination.",
+              text: "Oui, une intervention rapide limite la propagation et facilite le traitement.",
             },
           },
           {
             "@type": "Question",
-            name: `Dois-je préparer le logement avant l’intervention à ${VILLE} ?`,
+            name: "Le devis est-il gratuit ?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Oui. Un protocole précis avec des consignes claires est communiqué avant, pendant, entre les deux passages et après le traitement, pour optimiser l’efficacité et éviter les récidives.",
+              text: "Oui, Flash Nuisible réalise un devis gratuit par téléphone.",
             },
           },
         ],
