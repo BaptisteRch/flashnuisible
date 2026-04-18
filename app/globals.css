@@ -282,4 +282,12 @@ a {
   .on-dark option {
     color: #0b1220;
   }
+
+  .leaflet-container,
+  .leaflet-pane,
+  .leaflet-top,
+  .leaflet-bottom,
+  .leaflet-control {
+    z-index: 0 !important;
+  }
 }

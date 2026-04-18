@@ -1,6 +1,5 @@
 // app/page.jsx
 import Image from "next/image";
-import Link from "next/link";
 
 import SiteFooter from "./components/SiteFooter";
 import ContactSection from "./components/ContactSection";
@@ -10,6 +9,7 @@ import SiteHeader, { BRAND } from "./components/SiteHeader";
 import Collaborations from "./components/Collaborations";
 import ReviewsCarousel from "./components/ReviewsCarousel";
 import ActualitesSection from "./components/ActualitesSection";
+import CityServiceMap from "./components/CityServiceMap";
 
 export default function Home() {
   return (
@@ -91,6 +91,7 @@ export default function Home() {
       <section id="services">
         <ServiceCards />
       </section>
+      <CityServiceMap />
       <ActualitesSection />
       <FieldGallery />
       <Collaborations />

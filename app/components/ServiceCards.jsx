@@ -32,6 +32,16 @@ export default function ServiceCards() {
       desc: "Insectes du bois et charpentes : traitement curatif et préventif",
       href: "/xylophages",
     },
+    {
+      title: "Taupes",
+      desc: "Insectes du bois et charpentes : traitement curatif et préventif",
+      href: "/taupes",
+    },
+    {
+      title: "Pigeons",
+      desc: "Insectes du bois et charpentes : traitement curatif et préventif",
+      href: "/pigeons",
+    },
   ];
   return (
     <section className="section">
