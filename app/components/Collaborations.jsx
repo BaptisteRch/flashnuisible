@@ -2,6 +2,11 @@ import Image from "next/image";
 
 export default function Collaborations() {
   const photos = [
+    { src: "/images/chu.webp", alt: "Logo CHU" },
+    { src: "/images/mondial-relay.webp", alt: "Logo Mondial Relay" },
+    { src: "/images/marathon-biere.webp", alt: "Logo Marathon de la Bière" },
+    { src: "/images/netto.webp", alt: "Logo Netto" },
+    { src: "/images/standistes.webp", alt: "Logo Les Standistes" },
     { src: "/images/mondialbox2.jpg", alt: "Logo MondialBox" },
     { src: "/images/laposte.jpg", alt: "Logo La Poste" },
     { src: "/images/sncf2.jpg", alt: "Logo SNCF" },
