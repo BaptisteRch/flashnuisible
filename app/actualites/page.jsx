@@ -78,7 +78,170 @@ export default function ActualitesPage() {
 
           {/* GRID */}
           <div className="mt-6 grid gap-4 md:gap-5 md:grid-cols-12">
-            {/* 1 - A la une (8 colonnes) */}
+            {/* NEW 1 - Marathon de la Bière (À la une) */}
+            <article className="md:col-span-7 overflow-hidden rounded-2xl border border-black/10 bg-white/85 shadow-[0_14px_40px_rgba(2,6,23,0.10)]">
+              <div className="relative">
+                <div className="aspect-[16/9] bg-black">
+                  <img
+                    className="h-full w-full object-cover"
+                    src="/images/flash/marathon.webp"
+                    alt="Flash Nuisible au Marathon de la Bière à Champdieu"
+                  />
+                </div>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/35" />
+                <div className="absolute top-3 left-3 rounded-full bg-white/90 px-3 py-1 text-xs font-extrabold text-black/80 border border-black/10">
+                  À la une
+                </div>
+              </div>
+
+              <div className="p-4 md:p-6">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-xs font-semibold text-black/55">
+                    Partenariat • 4 juin 2026
+                  </span>
+                  <span className="rounded-full border border-orange-500/25 bg-orange-500/10 px-2.5 py-1 text-[11px] font-extrabold text-black/70">
+                    Marathon
+                  </span>
+                </div>
+
+                <h2 className="mt-3 text-xl md:text-2xl font-extrabold tracking-tight text-black">
+                  Flash Nuisible au Marathon de la Bière
+                </h2>
+
+                <p className="mt-3 text-black/70 leading-relaxed font-semibold">
+                  9000 coureurs, une seule GOAT.
+                </p>
+
+                <p className="mt-2 text-black/70 leading-relaxed">
+                  Flash Nuisible tenait un ravito au Marathon de la Bière, à
+                  Champdieu. Autant le dire : à ce moment précis de la course,
+                  les coureurs étaient bien contents de nous voir. Présence
+                  terrain, image de marque, ancrage local — un partenariat qui
+                  coche toutes les cases.
+                </p>
+
+                <div className="mt-4">
+                  <a
+                    className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 px-5 py-2.5 text-sm font-extrabold text-black hover:brightness-105 transition"
+                    href="https://www.instagram.com/p/DZItWU3iHBo/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Voir sur Instagram ↗
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            {/* NEW 2 - Trend Instagram */}
+            <article className="md:col-span-5 overflow-hidden rounded-2xl border border-black/10 bg-white/85 shadow-[0_14px_40px_rgba(2,6,23,0.10)]">
+              <div className="relative">
+                <div className="aspect-[16/9] bg-black">
+                  <img
+                    className="h-full w-full object-cover object-top"
+                    src="/images/flash/tenue_complete.webp"
+                    alt="Flash Nuisible en tenue complète d'intervention"
+                  />
+                </div>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/35" />
+                <div className="absolute top-3 left-3 rounded-full bg-white/90 px-3 py-1 text-xs font-extrabold text-black/80 border border-black/10">
+                  Social
+                </div>
+              </div>
+
+              <div className="p-4 md:p-6">
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-xs font-semibold text-black/55">
+                    Réseaux sociaux • 5 mai 2026
+                  </span>
+                  <span className="rounded-full border border-orange-500/25 bg-orange-500/10 px-2.5 py-1 text-[11px] font-extrabold text-black/70">
+                    Instagram
+                  </span>
+                </div>
+
+                <h3 className="mt-3 text-lg font-extrabold tracking-tight text-black">
+                  Flash Nuisible sur Instagram
+                </h3>
+
+                <p className="mt-2 text-black/70 leading-relaxed">
+                  La trend nous suit jusque sur Instagram… on s’appelle Flash
+                  depuis le début ⚡🪳
+                </p>
+                <p className="mt-2 text-black/70 leading-relaxed font-semibold">
+                  Vos nuisibles vont détester nous rencontrer.
+                </p>
+
+                <div className="mt-4">
+                  <a
+                    className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 px-4 py-2 text-sm font-extrabold text-black hover:brightness-105 transition"
+                    href="https://www.instagram.com/p/DX9ntP-iC5l/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Voir sur Instagram ↗
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            {/* NEW 3 - Stagiaire Mathis */}
+            <article className="md:col-span-12 overflow-hidden rounded-2xl border border-black/10 bg-white/85 shadow-[0_14px_40px_rgba(2,6,23,0.10)]">
+              <div className="grid md:grid-cols-2">
+                <div className="relative">
+                  <div className="aspect-[16/9] md:aspect-auto md:h-full bg-black">
+                    <img
+                      className="h-full w-full object-cover"
+                      src="/images/flash/stagiaire.webp"
+                      alt="Mathis, stagiaire chez Flash Nuisible"
+                    />
+                  </div>
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/35" />
+                  <div className="absolute top-3 left-3 rounded-full bg-white/90 px-3 py-1 text-xs font-extrabold text-black/80 border border-black/10">
+                    Équipe
+                  </div>
+                </div>
+
+                <div className="p-4 md:p-6">
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="text-xs font-semibold text-black/55">
+                      Équipe • 30 avril 2026
+                    </span>
+                    <span className="rounded-full border border-green-500/30 bg-green-500/10 px-2.5 py-1 text-[11px] font-extrabold text-black/70">
+                      Éco-responsable
+                    </span>
+                  </div>
+
+                  <h3 className="mt-3 text-xl md:text-2xl font-extrabold tracking-tight text-black">
+                    Voici Mathis, le nouveau stagiaire !
+                  </h3>
+
+                  <p className="mt-3 text-black/70 leading-relaxed font-semibold">
+                    🌿 Nuisibles 1 — Planète 0 ? ❌ Pas avec Mathis. Pas chez
+                    Flash Nuisible.
+                  </p>
+
+                  <p className="mt-3 text-black/70 leading-relaxed">
+                    Stagiaire chez Flash Nuisible, Mathis teste les poudres
+                    les plus écologiques du marché pour limiter notre impact
+                    sur la nature. Capture de frelons, analyses terrain… la
+                    relève est là 💪
+                  </p>
+
+                  <div className="mt-4">
+                    <a
+                      className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 px-5 py-2.5 text-sm font-extrabold text-black hover:brightness-105 transition"
+                      href="https://www.instagram.com/p/DXwaaAaI927/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Voir sur Instagram ↗
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            {/* 1 - 1000 abonnés (col-span-7) */}
             <article className="md:col-span-7 overflow-hidden rounded-2xl border border-black/10 bg-white/85 shadow-[0_14px_40px_rgba(2,6,23,0.10)]">
               <div className="relative">
                 <div className="aspect-[16/9] bg-black">
@@ -89,9 +252,6 @@ export default function ActualitesPage() {
                   />
                 </div>
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/35" />
-                <div className="absolute top-3 left-3 rounded-full bg-white/90 px-3 py-1 text-xs font-extrabold text-black/80 border border-black/10">
-                  À la une
-                </div>
               </div>
 
               <div className="p-4 md:p-6">

@@ -68,29 +68,29 @@ export default function ActualitesSection() {
                 <div className="relative">
                   <div className="flex items-center justify-between gap-4">
                     <span className="text-xs font-medium text-white/55">
-                      Réseaux sociaux • Février 2026
+                      Partenariat • Juin 2026
                     </span>
                     <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-extrabold text-white/80">
-                      Instagram
+                      Marathon
                     </span>
                   </div>
 
                   <h3 className="mt-4 text-lg md:text-xl font-extrabold tracking-tight text-white">
-                    Flash Nuisible franchit le cap des 1000 abonnés
+                    Flash Nuisible au Marathon de la Bière
                   </h3>
 
                   <p className="mt-2 text-sm leading-relaxed text-white/70">
-                    Un cap symbolique franchi sur Instagram avec plus de 1000
-                    abonnés. Interventions, coulisses et jeux concours à
-                    découvrir.
+                    9000 coureurs, une seule GOAT. Ravito tenu à Champdieu — à
+                    ce moment de la course, les coureurs étaient bien contents
+                    de nous voir.
                   </p>
 
                   <div className="relative mt-2">
                     <div className="aspect-[16/9] bg-black">
                       <img
                         className="h-full w-full object-cover"
-                        src="/images/flash/accueil3.webp"
-                        alt="Intervention terrain"
+                        src="/images/flash/marathon.webp"
+                        alt="Flash Nuisible au Marathon de la Bière à Champdieu"
                       />
                     </div>
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/35" />
@@ -98,12 +98,12 @@ export default function ActualitesSection() {
 
                   <div className="mt-5 flex flex-wrap items-center gap-3">
                     <a
-                      href="https://www.instagram.com/flashnuisible/"
+                      href="https://www.instagram.com/p/DZItWU3iHBo/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-500 px-4 py-2 text-sm font-extrabold text-black shadow-[0_18px_50px_rgba(249,115,22,0.25)] hover:brightness-105 transition"
                     >
-                      Suivre sur Instagram ↗
+                      Voir sur Instagram ↗
                     </a>
                   </div>
                 </div>
@@ -120,28 +120,29 @@ export default function ActualitesSection() {
                 <div className="relative">
                   <div className="flex items-center justify-between gap-4">
                     <span className="text-xs font-medium text-white/55">
-                      Partenariat • 2025/2026
+                      Réseaux sociaux • Mai 2026
                     </span>
-                    {/* <span className="rounded-full bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-500 px-2.5 py-1 text-[11px] font-extrabold text-black shadow-[0_10px_30px_rgba(249,115,22,0.25)]">
-                      LOT 200 €
-                    </span> */}
+                    <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] font-extrabold text-white/80">
+                      Instagram
+                    </span>
                   </div>
 
                   <h3 className="mt-4 text-lg md:text-xl font-extrabold tracking-tight text-white">
-                    Flash Nuisible partenaire du SCABB
+                    Flash Nuisible sur Instagram
                   </h3>
 
                   <p className="mt-2 text-sm leading-relaxed text-white/70">
-                    Un partenariat qui reflète la volonté de s’associer à des
-                    structures ambitieuses et exigeantes.
+                    La trend nous suit jusque sur Instagram… on s’appelle Flash
+                    depuis le début ⚡🪳 Vos nuisibles vont détester nous
+                    rencontrer.
                   </p>
 
                   <div className="relative mt-2">
                     <div className="aspect-[16/9] bg-black">
                       <img
-                        className="h-full w-full object-cover"
-                        src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1400&q=80"
-                        alt="Partenariat"
+                        className="h-full w-full object-cover object-top"
+                        src="/images/flash/tenue_complete.webp"
+                        alt="Flash Nuisible en tenue complète d'intervention"
                       />
                     </div>
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/10 via-black/10 to-black/35" />
@@ -149,7 +150,7 @@ export default function ActualitesSection() {
 
                   <div className="mt-5 flex flex-wrap items-center gap-3">
                     <a
-                      href="https://www.instagram.com/p/DSsdg-OFMu-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                      href="https://www.instagram.com/p/DX9ntP-iC5l/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-500 px-4 py-2 text-sm font-extrabold text-black shadow-[0_18px_50px_rgba(249,115,22,0.25)] hover:brightness-105 transition"
@@ -157,11 +158,6 @@ export default function ActualitesSection() {
                       Voir sur Instagram ↗
                     </a>
                   </div>
-
-                  {/* <p className="mt-4 text-xs text-white/45">
-                    Aucune participation possible depuis le site — uniquement
-                    via Instagram.
-                  </p> */}
                 </div>
               </article>
             </div>
