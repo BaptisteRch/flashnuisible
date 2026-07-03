@@ -70,8 +70,19 @@ export default function SiteFooter() {
           </a>
         </div>
 
-        <div className="mt-8 text-xs">
-          © {new Date().getFullYear()} Flash Nuisible — Tous droits réservés.
+        <div className="mt-8 flex flex-col gap-1 text-xs text-soft">
+          <div>
+            © {new Date().getFullYear()} Flash Nuisible — Tous droits réservés.
+          </div>
+          <div>
+            Site réalisé par{" "}
+            <a
+              className="font-medium hover:underline"
+              href="https://rochedevelopment.fr"
+            >
+              Roche Development
+            </a>
+          </div>
         </div>
       </Container>
     </footer>
