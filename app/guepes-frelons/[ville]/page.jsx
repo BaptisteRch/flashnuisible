@@ -1,4 +1,5 @@
 // app/guepes-frelons/[ville]/page.jsx
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import SiteHeader from "../../components/SiteHeader";
@@ -158,9 +159,9 @@ export default async function GuepesFrelonsVillePage({ params }) {
               <a href="#contact" className="btn btn-primary">
                 Contacter Flash Nuisible
               </a>
-              <a href="/guepes-frelons" className="btn btn-ghost">
+              <Link href="/guepes-frelons" className="btn btn-ghost">
                 Page Guêpes & Frelons
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -1,4 +1,5 @@
 // app/fouines/[ville]/page.jsx
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import SiteHeader from "../../components/SiteHeader";
@@ -163,9 +164,9 @@ export default async function FouinesVillePage({ params }) {
               <a href="#contact" className="btn btn-primary">
                 Contacter Flash Nuisible
               </a>
-              <a href="/fouines" className="btn btn-ghost">
+              <Link href="/fouines" className="btn btn-ghost">
                 Page Fouines
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -1,4 +1,5 @@
 // app/taupes/page.jsx
+import Link from "next/link";
 import Image from "next/image";
 
 import SiteHeader from "../components/SiteHeader";
@@ -69,9 +70,9 @@ export default function TaupesPage() {
                 <a href="#contact" className="btn btn-primary">
                   Demander un devis
                 </a>
-                <a href="/#services" className="btn btn-ghost">
+                <Link href="/#services" className="btn btn-ghost">
                   Voir les services
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -352,34 +353,6 @@ export default function TaupesPage() {
               </div>
             </div>
 
-            <div className="text-xs">
-              <h2 className="font-semibold mb-3">
-                Intervention traitement des taupes dans la région
-              </h2>
-
-              <ul className="md:grid-cols-1 gap-3">
-                <li>
-                  <a href="/taupes/saint-etienne">Saint-Étienne</a>
-                </li>
-                <li>
-                  <a href="/taupes/saint-just-saint-rambert">
-                    Saint-Just-Saint-Rambert
-                  </a>
-                </li>
-                <li>
-                  <a href="/taupes/andrezieux-boutheon">Andrézieux-Bouthéon</a>
-                </li>
-                <li>
-                  <a href="/taupes/montbrison">Montbrison</a>
-                </li>
-                <li>
-                  <a href="/taupes/firminy">Firminy</a>
-                </li>
-                <li>
-                  <a href="/taupes/lyon">Lyon</a>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>
