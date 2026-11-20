@@ -24,6 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/urgences/guepes-frelons",
     "/xylophages",
     "/actualites",
+    "/mentions-legales",
+    "/confidentialite",
   ];
 
   const cityServices = [

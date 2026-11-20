@@ -1,9 +1,7 @@
 // app/layout.jsx
 import "./globals.css";
-import { GoogleTagManager } from "@next/third-parties/google";
 
 const SITE_URL = "https://www.flashnuisible.com";
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "GTM-KQLZW2R4";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -64,7 +62,6 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="fr">
-      <GoogleTagManager gtmId={GTM_ID} />
       <head>
         <script
           type="application/ld+json"
