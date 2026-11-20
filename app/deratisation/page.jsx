@@ -71,9 +71,9 @@ export default function DeratisationPage() {
                 <a href="#contact" className="btn btn-primary">
                   Demander un devis
                 </a>
-                <a href="/#services" className="btn btn-ghost">
+                <Link href="/#services" className="btn btn-ghost">
                   Voir les services
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -214,24 +214,24 @@ export default function DeratisationPage() {
 
               <ul className=" md:grid-cols-1 gap-3">
                 <li>
-                  <a href="/deratisation/saint-etienne">Saint-Étienne</a>
+                  <Link href="/deratisation/saint-etienne">Saint-Étienne</Link>
                 </li>
                 <li>
-                  <a href="/deratisation/roanne">Roanne</a>
+                  <Link href="/deratisation/roanne">Roanne</Link>
                 </li>
                 <li>
-                  <a href="/deratisation/montbrison">Montbrison</a>
+                  <Link href="/deratisation/montbrison">Montbrison</Link>
                 </li>
                 <li>
-                  <a href="/deratisation/andrezieux-boutheon">
+                  <Link href="/deratisation/andrezieux-boutheon">
                     Andrézieux-Bouthéon
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/deratisation/saint-chamond">Saint-Chamond</a>
+                  <Link href="/deratisation/saint-chamond">Saint-Chamond</Link>
                 </li>
                 <li>
-                  <a href="/deratisation/Lyon">Lyon</a>
+                  <Link href="/deratisation/lyon">Lyon</Link>
                 </li>
               </ul>
             </div>

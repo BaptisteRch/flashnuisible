@@ -161,9 +161,9 @@ export default async function DeratisationVillePage({ params }) {
               <a href="#contact" className="btn btn-primary">
                 Contacter Flash Nuisible
               </a>
-              <a href="/deratisation" className="btn btn-ghost">
+              <Link href="/deratisation" className="btn btn-ghost">
                 Page Dératisation
-              </a>
+              </Link>
             </div>
           </div>
 

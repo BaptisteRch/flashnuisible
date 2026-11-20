@@ -1,4 +1,5 @@
 // app/xylophages/page.jsx
+import Link from "next/link";
 import Image from "next/image";
 
 import SiteHeader from "../components/SiteHeader";
@@ -69,9 +70,9 @@ export default function XylophagesPage() {
                 <a href="#contact" className="btn btn-primary">
                   Demander un diagnostic
                 </a>
-                <a href="/#services" className="btn btn-ghost">
+                <Link href="/#services" className="btn btn-ghost">
                   Voir les services
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -278,24 +279,24 @@ export default function XylophagesPage() {
 
               <ul className=" md:grid-cols-1 gap-3">
                 <li>
-                  <a href="/xylophages/saint-etienne">Saint-Étienne</a>
+                  <Link href="/xylophages/saint-etienne">Saint-Étienne</Link>
                 </li>
                 <li>
-                  <a href="/xylophages/roanne">Roanne</a>
+                  <Link href="/xylophages/roanne">Roanne</Link>
                 </li>
                 <li>
-                  <a href="/xylophages/montbrison">Montbrison</a>
+                  <Link href="/xylophages/montbrison">Montbrison</Link>
                 </li>
                 <li>
-                  <a href="/xylophages/andrezieux-boutheon">
+                  <Link href="/xylophages/andrezieux-boutheon">
                     Andrézieux-Bouthéon
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/xylophages/saint-chamond">Saint-Chamond</a>
+                  <Link href="/xylophages/saint-chamond">Saint-Chamond</Link>
                 </li>
                 <li>
-                  <a href="/xylophages/Lyon">Lyon</a>
+                  <Link href="/xylophages/lyon">Lyon</Link>
                 </li>
               </ul>
             </div>

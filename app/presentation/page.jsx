@@ -1,4 +1,5 @@
 // app/presentation/page.jsx
+import Link from "next/link";
 import Image from "next/image";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
@@ -31,9 +32,9 @@ export default function PresentationPage() {
                 <a className="btn btn-primary" href="#contact">
                   Demander un devis
                 </a>
-                <a className="btn btn-ghost" href="/#services">
+                <Link className="btn btn-ghost" href="/#services">
                   Voir les services
-                </a>
+                </Link>
               </div>
             </div>
 

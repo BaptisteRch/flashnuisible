@@ -1,4 +1,5 @@
 // app/fouines/page.jsx
+import Link from "next/link";
 import Image from "next/image";
 
 import SiteHeader from "../components/SiteHeader";
@@ -71,9 +72,9 @@ export default function FouinesPage() {
                 <a href="#contact" className="btn btn-primary">
                   Demander un devis
                 </a>
-                <a href="/#services" className="btn btn-ghost">
+                <Link href="/#services" className="btn btn-ghost">
                   Voir les services
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -235,22 +236,22 @@ export default function FouinesPage() {
 
               <ul className=" md:grid-cols-1 gap-3">
                 <li>
-                  <a href="/fouines/saint-etienne">Saint-Étienne</a>
+                  <Link href="/fouines/saint-etienne">Saint-Étienne</Link>
                 </li>
                 <li>
-                  <a href="/fouines/roanne">Roanne</a>
+                  <Link href="/fouines/roanne">Roanne</Link>
                 </li>
                 <li>
-                  <a href="/fouines/montbrison">Montbrison</a>
+                  <Link href="/fouines/montbrison">Montbrison</Link>
                 </li>
                 <li>
-                  <a href="/fouines/andrezieux-boutheon">Andrézieux-Bouthéon</a>
+                  <Link href="/fouines/andrezieux-boutheon">Andrézieux-Bouthéon</Link>
                 </li>
                 <li>
-                  <a href="/fouines/saint-chamond">Saint-Chamond</a>
+                  <Link href="/fouines/saint-chamond">Saint-Chamond</Link>
                 </li>
                 <li>
-                  <a href="/fouines/Lyon">Lyon</a>
+                  <Link href="/fouines/lyon">Lyon</Link>
                 </li>
               </ul>
             </div>

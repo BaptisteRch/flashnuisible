@@ -70,9 +70,9 @@ export default function DesinsectisationPage() {
                 <a href="#contact" className="btn btn-primary">
                   Demander un devis
                 </a>
-                <a href="/#services" className="btn btn-ghost">
+                <Link href="/#services" className="btn btn-ghost">
                   Voir les services
-                </a>
+                </Link>
               </div>
             </div>
 

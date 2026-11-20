@@ -1,4 +1,5 @@
 // app/professionnels/page.jsx
+import Link from "next/link";
 import Image from "next/image";
 
 import SiteHeader from "../components/SiteHeader";
@@ -77,9 +78,9 @@ export default function ProfessionnelsPage() {
                 <a href="#contact" className="btn btn-primary">
                   Demander un devis
                 </a>
-                <a href="/#services" className="btn btn-ghost">
+                <Link href="/#services" className="btn btn-ghost">
                   Voir les services
-                </a>
+                </Link>
               </div>
             </div>
 

@@ -66,9 +66,9 @@ export default function UrgencesHubPage() {
               <a href="#contact" className="btn btn-primary">
                 Demander un diagnostic
               </a>
-              <a href="/" className="btn btn-ghost">
+              <Link href="/" className="btn btn-ghost">
                 Retour accueil
-              </a>
+              </Link>
             </div>
           </div>
 

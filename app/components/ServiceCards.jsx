@@ -48,7 +48,7 @@ export default function ServiceCards() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
-            Un problème de nuisibles ? On s'en occupe.
+            Un problème de nuisibles ? On s&apos;en occupe.
           </h2>
           <div className="mt-4 text-lg font-semibold text-gradient">
             Intervention rapide, diagnostic précis et solution durable

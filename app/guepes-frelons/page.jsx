@@ -1,4 +1,5 @@
 // app/guepes-frelons/page.jsx
+import Link from "next/link";
 import Image from "next/image";
 
 import SiteHeader from "../components/SiteHeader";
@@ -67,9 +68,9 @@ export default function GuepesFrelonsPage() {
                 <a href="#contact" className="btn btn-primary">
                   Demander une intervention
                 </a>
-                <a href="/#services" className="btn btn-ghost">
+                <Link href="/#services" className="btn btn-ghost">
                   Voir les services
-                </a>
+                </Link>
               </div>
 
               <p className="mt-2 text-m text-muted font-bold text-black">
@@ -255,24 +256,24 @@ export default function GuepesFrelonsPage() {
 
               <ul className=" md:grid-cols-1 gap-3">
                 <li>
-                  <a href="/guepes-frelons/saint-etienne">Saint-Étienne</a>
+                  <Link href="/guepes-frelons/saint-etienne">Saint-Étienne</Link>
                 </li>
                 <li>
-                  <a href="/guepes-frelons/roanne">Roanne</a>
+                  <Link href="/guepes-frelons/roanne">Roanne</Link>
                 </li>
                 <li>
-                  <a href="/guepes-frelons/montbrison">Montbrison</a>
+                  <Link href="/guepes-frelons/montbrison">Montbrison</Link>
                 </li>
                 <li>
-                  <a href="/guepes-frelons/andrezieux-boutheon">
+                  <Link href="/guepes-frelons/andrezieux-boutheon">
                     Andrézieux-Bouthéon
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/guepes-frelons/saint-chamond">Saint-Chamond</a>
+                  <Link href="/guepes-frelons/saint-chamond">Saint-Chamond</Link>
                 </li>
                 <li>
-                  <a href="/guepes-frelons/Lyon">Lyon</a>
+                  <Link href="/guepes-frelons/lyon">Lyon</Link>
                 </li>
               </ul>
             </div>
